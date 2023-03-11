@@ -10,11 +10,18 @@ class AppProvider extends ChangeNotifier {
 
   AppText text = AppText();
   AppRadius radius = AppRadius();
+  late Size dimensions;
   App configs = App();
 
   init() {
     text.init();
     radius.init();
+
+    notifyListeners();
+  }
+
+  initDimension(BuildContext context) {
+    dimensions = MediaQuery.of(context).size;
 
     notifyListeners();
   }

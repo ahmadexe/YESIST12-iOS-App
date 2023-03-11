@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:yesist_ios_app/configs/app_theme.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
 import 'package:yesist_ios_app/screens/finale/finale_screen.dart';
 import 'package:yesist_ios_app/screens/more_info/more_info_screen.dart';
@@ -24,6 +23,7 @@ class _MobileLayoutState extends State<MobileLayout> {
   @override
   void initState() {
     super.initState();
+
     _pageController = PageController();
   }
 
@@ -62,10 +62,6 @@ class _MobileLayoutState extends State<MobileLayout> {
         height: 40,
         activeColor: Colors.blue,
         inactiveColor: Colors.grey,
-        // backgroundColor: Color(0xfffefefe),
-        // backgroundColor: Colors.black,
-        // backgroundColor: Colors.white,
-        // backgroundColor: Color.fromARGB(255, 194, 194, 194),
         backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(

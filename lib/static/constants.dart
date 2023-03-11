@@ -1,5 +1,7 @@
-import 'package:yesist_ios_app/configs/app_dimensions.dart';
+import 'package:flutter/material.dart';
 
 class AppConstants {
-  static double toolbarHeight = AppDimensions.normalize(120);
+  static toolbarHeight(BuildContext context) {
+    return MediaQuery.of(context).size.height * 0.15;
+  }
 }
