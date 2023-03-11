@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yesist_ios_app/base_wrapper.dart';
+import 'package:yesist_ios_app/configs/app.dart';
+import 'package:yesist_ios_app/mobile_layout.dart';
 import 'package:yesist_ios_app/providers/app_provider.dart';
 import 'configs/core_theme.dart' as theme;
-import 'screens/home/home_screen.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // App.init(context);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AppProvider()..init())
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           title: "YESIST12",
           theme: theme.themeLight,
-          home: const HomeScreen(),
+          home: const MobileLayout(),
         ),
       ),
     );

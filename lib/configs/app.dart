@@ -14,7 +14,7 @@ class App {
   static bool? isLtr;
   static bool showAds = false;
 
-  static init(BuildContext context) async {
+  init(BuildContext context) async {
     UI.init(context);
     AppDimensions.init();
     AppTheme.init(context);
