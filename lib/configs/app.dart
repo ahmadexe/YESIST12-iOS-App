@@ -6,7 +6,6 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 
 import 'app_dimensions.dart';
 import 'app_theme.dart';
-import 'app_typography.dart';
 import 'space.dart';
 import 'ui.dart';
 import 'ui_props.dart';
@@ -21,8 +20,6 @@ class App {
     AppTheme.init(context);
     UIProps.init();
     Space.init();
-    AppText.init();
-
     isLtr = Directionality.of(context) == TextDirection.ltr;
   }
 
