@@ -25,7 +25,7 @@ class _ResoucesTile extends StatelessWidget {
               // Space.xf(2),
               Text(
                 "  $title",
-                style: app.text.h3sb.copyWith(color: Colors.white),
+                style: AppText.b1!.copyWith(color: Colors.white),
               ),
             ],
           ),
@@ -41,7 +41,7 @@ class _ResoucesTile extends StatelessWidget {
               minLeadingWidth: 10,
               title: Text(
                 description,
-                style: app.text.t1,
+                style: AppText.b2,
               ),
             )
           ],

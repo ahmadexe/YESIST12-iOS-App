@@ -1,59 +1,54 @@
 import 'package:flutter/material.dart';
 
+import 'app_dimensions.dart';
+import 'core_theme.dart';
+
 class AppText {
+  static TextStyle? btn;
+
   // Headings
-  late TextStyle h1;
-  late TextStyle h2;
-  late TextStyle h3;
-  late TextStyle h1b;
-  late TextStyle h2b;
-  late TextStyle h3b;
-  late TextStyle h1sb;
-  late TextStyle h2sb;
-  late TextStyle h3sb;
+  static TextStyle? h1;
+  static TextStyle? h1b;
+  static TextStyle? h2;
+  static TextStyle? h2b;
+  static TextStyle? h3;
+  static TextStyle? h3b;
 
   // Body
-  late TextStyle t1;
-  late TextStyle t2;
-  late TextStyle t1b;
-  late TextStyle t2b;
-  late TextStyle t1sb;
-  late TextStyle t2sb;
+  static TextStyle? b1;
+  static TextStyle? b1b;
+  static TextStyle? b2;
+  static TextStyle? b2b;
 
-  // hyperlinks
-  late TextStyle hll;
-  late TextStyle hl2;
+  // Label
+  static TextStyle? l1;
+  static TextStyle? l1b;
+  static TextStyle? l2;
+  static TextStyle? l2b;
 
-  init() {
-    TextStyle base = const TextStyle();
-    h1 = base.copyWith(fontSize: 32);
-    h2 = base.copyWith(fontSize: 26);
-    h3 = base.copyWith(fontSize: 18);
+  static init() {
+    const b = FontWeight.bold;
+    const baseStyle = TextStyle(fontFamily: fontFamily);
 
-    h1b = base.copyWith(fontSize: 32, fontWeight: FontWeight.bold);
-    h2b = base.copyWith(fontSize: 26, fontWeight: FontWeight.bold);
-    h3b = base.copyWith(fontSize: 18, fontWeight: FontWeight.bold);
+    h1 = baseStyle.copyWith(fontSize: AppDimensions.font(18.0));
+    h1b = h1!.copyWith(fontWeight: b);
 
-    h1sb = base.copyWith(fontSize: 32, fontWeight: FontWeight.w500);
-    h2sb = base.copyWith(fontSize: 26, fontWeight: FontWeight.w500);
-    h3sb = base.copyWith(fontSize: 18, fontWeight: FontWeight.w500);
+    h2 = baseStyle.copyWith(fontSize: AppDimensions.font(12));
+    h2b = h2!.copyWith(fontWeight: b);
 
-    t1 = base.copyWith(fontSize: 16);
-    t2 = base.copyWith(fontSize: 14);
+    h3 = baseStyle.copyWith(fontSize: AppDimensions.font(10));
+    h3b = h3!.copyWith(fontWeight: b);
 
-    t1b = base.copyWith(fontSize: 16, fontWeight: FontWeight.bold);
-    t2b = base.copyWith(fontSize: 14, fontWeight: FontWeight.bold);
+    b1 = baseStyle.copyWith(fontSize: AppDimensions.font(9));
+    b1b = b1!.copyWith(fontWeight: b);
 
-    t1sb = base.copyWith(fontSize: 16, fontWeight: FontWeight.w500);
-    t2sb = base.copyWith(fontSize: 14, fontWeight: FontWeight.w500);
+    b2 = baseStyle.copyWith(fontSize: AppDimensions.font(8));
+    b2b = b2!.copyWith(fontWeight: b);
 
-    hll = base.copyWith(
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
-        decoration: TextDecoration.underline);
-    hl2 = base.copyWith(
-        fontSize: 14,
-        fontWeight: FontWeight.bold,
-        decoration: TextDecoration.underline);
+    l1 = baseStyle.copyWith(fontSize: AppDimensions.font(7));
+    l1b = l1!.copyWith(fontWeight: b);
+
+    l2 = baseStyle.copyWith(fontSize: AppDimensions.font(6));
+    l2b = l2!.copyWith(fontWeight: b);
   }
 }

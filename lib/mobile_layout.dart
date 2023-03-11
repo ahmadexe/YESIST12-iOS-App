@@ -65,7 +65,7 @@ class _MobileLayoutState extends State<MobileLayout> {
         backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: _page == 0? StaticColors.primaryColor : Colors.grey),
+            icon: Icon(Icons.home_outlined, color: _page == 0? StaticColors.primaryColor : Colors.grey),
             backgroundColor: Colors.white,
             label: ""
           ),
@@ -84,13 +84,13 @@ class _MobileLayoutState extends State<MobileLayout> {
             // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.cloudy_snowing, color: _page == 3? Colors.blue : Colors.grey),
+            icon: Icon(CupertinoIcons.location_fill, color: _page == 3? StaticColors.primaryColor : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
             // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: _page == 4? Colors.blue : Colors.grey),
+            icon: Icon(Icons.more_horiz, color: _page == 4? StaticColors.primaryColor : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
 

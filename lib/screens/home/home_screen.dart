@@ -11,10 +11,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final app = AppProvider.state(context);
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: AppConstants.toolbarHeight(context),
+        toolbarHeight: AppConstants.toolbarHeight,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -27,11 +26,11 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Text(
                       "IEEE YESIST-12",
-                      style: app.text.h1,
+                      style: AppText.h1!.w(4),
                     ),
                     Text(
                       "2022",
-                      style: app.text.t2,
+                      style: AppText.l1,
                     ),
                   ],
                 ),
@@ -43,7 +42,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: AppDimensions.normalize(10)),
             Text(
               "A program under ASIST - Augmented Social Innovations through Science and Technology",
-              style: app.text.t2,
+              style: AppText.l1,
               maxLines: 2,
             ),
           ],
@@ -63,26 +62,26 @@ class HomeScreen extends StatelessWidget {
                     Column(
                       children: [
                         Image.asset("assets/images/people.png",
-                            height: MediaQuery.of(context).size.height * 0.09,
-                            width: MediaQuery.of(context).size.width * 0.18,
+                            height: AppDimensions.normalize(25),
+                            width: AppDimensions.normalize(25),
                             fit: BoxFit.fill),
-                        Text("3000", style: app.text.h2b),
+                        Text("3000", style: AppText.h2!.w(6)),
                         Text(
                           "Participants",
-                          style: app.text.t1b.copyWith(color: Colors.grey),
+                          style: AppText.h3!.copyWith(color: Colors.grey),
                         ),
                       ],
                     ),
                     Column(
                       children: [
                         Image.asset("assets/images/bookmark.png",
-                            height: MediaQuery.of(context).size.height * 0.09,
-                            width: MediaQuery.of(context).size.width * 0.18,
+                            height: AppDimensions.normalize(25),
+                            width: AppDimensions.normalize(25),
                             fit: BoxFit.fill),
-                        Text("100", style: app.text.h2b),
+                        Text("100", style: AppText.h2!.w(6)),
                         Text(
                           "Pilots",
-                          style: app.text.t1b.copyWith(color: Colors.grey),
+                          style: AppText.h3!.copyWith(color: Colors.grey),
                         ),
                       ],
                     ),
@@ -90,7 +89,9 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               // Space.y1!,
-              const SizedBox(height: 40),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: Row(
@@ -99,26 +100,26 @@ class HomeScreen extends StatelessWidget {
                     Column(
                       children: [
                         Image.asset("assets/images/earth.png",
-                            height: MediaQuery.of(context).size.height * 0.09,
-                            width: MediaQuery.of(context).size.width * 0.18,
+                            height: AppDimensions.normalize(25),
+                            width: AppDimensions.normalize(25),
                             fit: BoxFit.fill),
-                        Text("15", style: app.text.h2b),
+                        Text("15", style: AppText.h2!.w(6)),
                         Text(
                           "Countries",
-                          style: app.text.t1b.copyWith(color: Colors.grey),
+                          style: AppText.h3!.copyWith(color: Colors.grey),
                         ),
                       ],
                     ),
                     Column(
                       children: [
                         Image.asset("assets/images/books.png",
-                            height: MediaQuery.of(context).size.height * 0.09,
-                            width: MediaQuery.of(context).size.width * 0.18,
+                            height: AppDimensions.normalize(25),
+                            width: AppDimensions.normalize(25),
                             fit: BoxFit.fill),
-                        Text("5", style: app.text.h2b),
+                        Text("5", style: AppText.h2!.w(6)),
                         Text(
                           "Tracks",
-                          style: app.text.t1b.copyWith(color: Colors.grey),
+                          style: AppText.h3!.copyWith(color: Colors.grey),
                         ),
                       ],
                     ),
@@ -128,16 +129,15 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.04,
               ),
-              Text("Why you should join \nYESIST12?", style: app.text.h2b),
+              Text("Why you should join \nYESIST12?", style: AppText.h2b),
               const _ResoucesTile(
                   title: 'Hello', description: "hsajhfjhjkaklfsdjhfs"),
-                    const _ResoucesTile(
+              const _ResoucesTile(
                   title: 'Hello', description: "hsajhfjhjkaklfsdjhfs"),
-                    const _ResoucesTile(
+              const _ResoucesTile(
                   title: 'Hello', description: "hsajhfjhjkaklfsdjhfs"),
-                    const _ResoucesTile(
+              const _ResoucesTile(
                   title: 'Hello', description: "hsajhfjhjkaklfsdjhfs")
-        
             ],
           ),
         ),

@@ -6,6 +6,7 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 
 import 'app_dimensions.dart';
 import 'app_theme.dart';
+import 'app_typography.dart';
 import 'space.dart';
 import 'ui.dart';
 import 'ui_props.dart';
@@ -14,12 +15,14 @@ class App {
   static bool? isLtr;
   static bool showAds = false;
 
-  init(BuildContext context) async {
+  static init(BuildContext context) async {
     UI.init(context);
     AppDimensions.init();
     AppTheme.init(context);
     UIProps.init();
     Space.init();
+    AppText.init();
+
     isLtr = Directionality.of(context) == TextDirection.ltr;
   }
 
