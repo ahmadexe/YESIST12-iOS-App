@@ -11,7 +11,7 @@ class _InfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
-      height: MediaQuery.of(context).size.height * .081,
+      height: AppDimensions.normalize(29),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -33,7 +33,9 @@ class _InfoCard extends StatelessWidget {
                 subtext,
                 style: AppText.l2!.copyWith(
                   color: Colors.white,
-                  decoration: underlined? TextDecoration.underline : TextDecoration.none,
+                  decoration: underlined
+                      ? TextDecoration.underline
+                      : TextDecoration.none,
                 ),
               ),
             ],

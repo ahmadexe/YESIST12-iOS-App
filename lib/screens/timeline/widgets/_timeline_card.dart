@@ -7,7 +7,7 @@ class _TimelineCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 1 / 7,
+      height: AppDimensions.normalize(53),
       width: double.infinity,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

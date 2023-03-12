@@ -7,7 +7,7 @@ class _AddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
-      height: MediaQuery.of(context).size.height * 0.48,
+      height: AppDimensions.normalize(171),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -17,7 +17,7 @@ class _AddressCard extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(8),
-            height: MediaQuery.of(context).size.height * 0.19,
+            height: AppDimensions.normalize(67),
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -45,10 +45,10 @@ class _AddressCard extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {},
-                      child: const CircleAvatar(
-                        radius: 30,
+                      child: CircleAvatar(
+                        radius: AppDimensions.normalize(11),
                         backgroundColor: StaticColors.primaryColor,
-                        child: Icon(
+                        child: const Icon(
                           CupertinoIcons.location_fill,
                           color: StaticColors.secondaryColor,
                         ),
