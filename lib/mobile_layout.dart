@@ -16,7 +16,6 @@ class MobileLayout extends StatefulWidget {
 }
 
 class _MobileLayoutState extends State<MobileLayout> {
-
   int _page = 0;
   late PageController _pageController;
 
@@ -37,7 +36,7 @@ class _MobileLayoutState extends State<MobileLayout> {
     _pageController.jumpToPage(page);
   }
 
-  onPageChanged(int page){
+  onPageChanged(int page) {
     setState(() {
       _page = page;
     });
@@ -65,32 +64,36 @@ class _MobileLayoutState extends State<MobileLayout> {
         backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined, color: _page == 0? StaticColors.primaryColor : Colors.grey),
-            backgroundColor: Colors.white,
-            label: ""
-          ),
+              icon: Icon(Icons.home_outlined,
+                  color: _page == 0 ? StaticColors.primaryColor : Colors.grey),
+              backgroundColor: Colors.white,
+              label: ""),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart, color: _page == 1? Colors.blue : Colors.grey),
+            icon: Icon(CupertinoIcons.calendar,
+                color: _page == 1 ? StaticColors.primaryColor : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
 
             // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.camera_alt, color: _page == 2? Colors.blue : Colors.grey),
+            icon: Icon(CupertinoIcons.circle_grid_3x3_fill,
+                color: _page == 2 ? StaticColors.primaryColor : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
 
             // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.location_fill, color: _page == 3? StaticColors.primaryColor : Colors.grey),
+            icon: Icon(CupertinoIcons.location_fill,
+                color: _page == 3 ? StaticColors.primaryColor : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
             // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.more_horiz, color: _page == 4? StaticColors.primaryColor : Colors.grey),
+            icon: Icon(Icons.more_horiz,
+                color: _page == 4 ? StaticColors.primaryColor : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
 

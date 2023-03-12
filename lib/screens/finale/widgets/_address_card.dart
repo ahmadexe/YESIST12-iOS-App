@@ -7,7 +7,7 @@ class _AddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
-      height: MediaQuery.of(context).size.height * 0.45,
+      height: MediaQuery.of(context).size.height * 0.48,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -59,9 +59,16 @@ class _AddressCard extends StatelessWidget {
               ],
             ),
           ),
-          Container(),
-          Container(),
-          Container(),
+          Space.y!,
+          const _InfoCard(
+              title: "Telephone", subtext: "+919731226262", underlined: true),
+          Space.y!,
+          const _InfoCard(
+              title: "Website",
+              subtext: "https://www.svcengg.edu.in/",
+              underlined: true),
+          Space.y!,
+          const _InfoCard(title: "3D-Tour", subtext: "Click here")
         ],
       ),
     );
