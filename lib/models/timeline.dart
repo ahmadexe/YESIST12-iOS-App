@@ -3,40 +3,40 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
-class Timezone {
+class Timeline {
   final String title;
   final DateTime date;
   final String description;
-  final DateTime start_time;
-  final DateTime end_time;
-  final String event_url;
+  final DateTime startTime;
+  final DateTime endTime;
+  final String eventUrl;
   final List<String> speakers;
-  Timezone({
+  Timeline({
     required this.title,
     required this.date,
     required this.description,
-    required this.start_time,
-    required this.end_time,
-    required this.event_url,
+    required this.startTime,
+    required this.endTime,
+    required this.eventUrl,
     required this.speakers,
   });
 
-  Timezone copyWith({
+  Timeline copyWith({
     String? title,
     DateTime? date,
     String? description,
-    DateTime? start_time,
-    DateTime? end_time,
-    String? event_url,
+    DateTime? startTime,
+    DateTime? endTime,
+    String? eventUrl,
     List<String>? speakers,
   }) {
-    return Timezone(
+    return Timeline(
       title: title ?? this.title,
       date: date ?? this.date,
       description: description ?? this.description,
-      start_time: start_time ?? this.start_time,
-      end_time: end_time ?? this.end_time,
-      event_url: event_url ?? this.event_url,
+      startTime: startTime ?? this.startTime,
+      endTime: endTime ?? this.endTime,
+      eventUrl: eventUrl ?? this.eventUrl,
       speakers: speakers ?? this.speakers,
     );
   }
@@ -46,45 +46,45 @@ class Timezone {
       'title': title,
       'date': date.millisecondsSinceEpoch,
       'description': description,
-      'start_time': start_time.millisecondsSinceEpoch,
-      'end_time': end_time.millisecondsSinceEpoch,
-      'event_url': event_url,
+      'startTime': startTime.millisecondsSinceEpoch,
+      'endTime': endTime.millisecondsSinceEpoch,
+      'eventUrl': eventUrl,
       'speakers': speakers,
     };
   }
 
-  factory Timezone.fromMap(Map<String, dynamic> map) {
-    return Timezone(
+  factory Timeline.fromMap(Map<String, dynamic> map) {
+    return Timeline(
       title: map['title'] as String,
       date: DateTime.fromMillisecondsSinceEpoch(map['date'] as int),
       description: map['description'] as String,
-      start_time: DateTime.parse(map['start_time']),
-      end_time: DateTime.parse(map['end_time']),
-      event_url: map['event_url'] as String,
+      startTime: DateTime.fromMillisecondsSinceEpoch(map['startTime'] as int),
+      endTime: DateTime.fromMillisecondsSinceEpoch(map['endTime'] as int),
+      eventUrl: map['eventUrl'] as String,
       speakers: List<String>.from((map['speakers'] as List<String>)),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Timezone.fromJson(String source) => Timezone.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Timeline.fromJson(String source) => Timeline.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'Timezone(title: $title, date: $date, description: $description, start_time: $start_time, end_time: $end_time, event_url: $event_url, speakers: $speakers)';
+    return 'Timeline(title: $title, date: $date, description: $description, startTime: $startTime, endTime: $endTime, eventUrl: $eventUrl, speakers: $speakers)';
   }
 
   @override
-  bool operator ==(covariant Timezone other) {
+  bool operator ==(covariant Timeline other) {
     if (identical(this, other)) return true;
   
     return 
       other.title == title &&
       other.date == date &&
       other.description == description &&
-      other.start_time == start_time &&
-      other.end_time == end_time &&
-      other.event_url == event_url &&
+      other.startTime == startTime &&
+      other.endTime == endTime &&
+      other.eventUrl == eventUrl &&
       listEquals(other.speakers, speakers);
   }
 
@@ -93,9 +93,9 @@ class Timezone {
     return title.hashCode ^
       date.hashCode ^
       description.hashCode ^
-      start_time.hashCode ^
-      end_time.hashCode ^
-      event_url.hashCode ^
+      startTime.hashCode ^
+      endTime.hashCode ^
+      eventUrl.hashCode ^
       speakers.hashCode;
   }
 }
