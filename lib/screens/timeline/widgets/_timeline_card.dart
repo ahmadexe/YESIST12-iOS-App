@@ -60,7 +60,11 @@ class _TimelineCard extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                "Completed",
+                                DatetimeUtils.getDifferenceInMinutes(
+                                            DateTime.now(), timeline.endTime) <=
+                                        0
+                                    ? "Completed"
+                                    : " ${DateTime.now().difference(timeline.endTime).inDays.toString()}: ${DateTime.now().difference(timeline.endTime).inHours.toString()}: ${DateTime.now().difference(timeline.endTime).inMinutes.toString()}",
                                 style: AppText.l2b!
                                     .copyWith(color: Colors.blue[900]),
                                 textAlign: TextAlign.center,

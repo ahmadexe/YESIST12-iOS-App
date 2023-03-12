@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/models/timeline.dart';
 import 'package:yesist_ios_app/static/constants.dart';
+import 'package:yesist_ios_app/utils/datetime_utils.dart';
 
 part 'widgets/_timeline_card.dart';
 
