@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
-class Timeline {
+class TimelineModel {
   final String title;
   final DateTime date;
   final String description;
@@ -11,7 +11,7 @@ class Timeline {
   final DateTime endTime;
   final String eventUrl;
   final List<String> speakers;
-  Timeline({
+  TimelineModel({
     required this.title,
     required this.date,
     required this.description,
@@ -20,8 +20,9 @@ class Timeline {
     required this.eventUrl,
     required this.speakers,
   });
+  
 
-  Timeline copyWith({
+  TimelineModel copyWith({
     String? title,
     DateTime? date,
     String? description,
@@ -30,7 +31,7 @@ class Timeline {
     String? eventUrl,
     List<String>? speakers,
   }) {
-    return Timeline(
+    return TimelineModel(
       title: title ?? this.title,
       date: date ?? this.date,
       description: description ?? this.description,
@@ -53,8 +54,8 @@ class Timeline {
     };
   }
 
-  factory Timeline.fromMap(Map<String, dynamic> map) {
-    return Timeline(
+  factory TimelineModel.fromMap(Map<String, dynamic> map) {
+    return TimelineModel(
       title: map['title'] as String,
       date: DateTime.fromMillisecondsSinceEpoch(map['date'] as int),
       description: map['description'] as String,
@@ -67,15 +68,15 @@ class Timeline {
 
   String toJson() => json.encode(toMap());
 
-  factory Timeline.fromJson(String source) => Timeline.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory TimelineModel.fromJson(String source) => TimelineModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'Timeline(title: $title, date: $date, description: $description, startTime: $startTime, endTime: $endTime, eventUrl: $eventUrl, speakers: $speakers)';
+    return 'TimelineModel(title: $title, date: $date, description: $description, startTime: $startTime, endTime: $endTime, eventUrl: $eventUrl, speakers: $speakers)';
   }
 
   @override
-  bool operator ==(covariant Timeline other) {
+  bool operator ==(covariant TimelineModel other) {
     if (identical(this, other)) return true;
   
     return 
