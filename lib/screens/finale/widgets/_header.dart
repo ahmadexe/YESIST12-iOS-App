@@ -5,7 +5,6 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final app = AppProvider.state(context);
     return Container(
       padding: const EdgeInsets.all(8),
       height: MediaQuery.of(context).size.height * 0.08,

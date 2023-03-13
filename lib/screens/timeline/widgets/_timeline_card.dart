@@ -6,6 +6,7 @@ class _TimelineCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final difference = timeline.endTime.difference(DateTime.now());
     return SizedBox(
       height: AppDimensions.normalize(53),
       width: double.infinity,
@@ -60,11 +61,13 @@ class _TimelineCard extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                DatetimeUtils.getDifferenceInMinutes(
-                                            DateTime.now(), timeline.endTime) <=
-                                        0
-                                    ? "Completed"
-                                    : " ${DateTime.now().difference(timeline.endTime).inDays.toString()}: ${DateTime.now().difference(timeline.endTime).inHours.toString()}: ${DateTime.now().difference(timeline.endTime).inMinutes.toString()}",
+                                difference.inDays > 0
+                                    ? "${difference.inDays} Days"
+                                    : difference.inHours > 0
+                                        ? "${difference.inHours} hours"
+                                        : difference.inMinutes > 0
+                                            ? "${difference.inMinutes} mins"
+                                            : "Completed",
                                 style: AppText.l2b!
                                     .copyWith(color: Colors.blue[900]),
                                 textAlign: TextAlign.center,

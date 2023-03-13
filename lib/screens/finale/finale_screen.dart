@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
-import 'package:yesist_ios_app/providers/app_provider.dart';
 
 part 'widgets/_header.dart';
 part 'widgets/_address_card.dart';

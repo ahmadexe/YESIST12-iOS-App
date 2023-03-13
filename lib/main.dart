@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yesist_ios_app/base_wrapper.dart';
-import 'package:yesist_ios_app/mobile_layout.dart';
 import 'package:yesist_ios_app/providers/app_provider.dart';
 import 'package:yesist_ios_app/screens/splash.dart';
 import 'configs/core_theme.dart' as theme;

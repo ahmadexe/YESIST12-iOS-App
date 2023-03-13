@@ -7,7 +7,6 @@ class _ResoucesTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final app = AppProvider.state(context);
     return Card(
       color: StaticColors.primaryColor,
       child: Theme(
