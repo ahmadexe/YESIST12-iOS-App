@@ -69,7 +69,8 @@ class _TimelineCard extends StatelessWidget {
                                         ? "${difference.inHours} hours"
                                         : difference.inMinutes > 0
                                             ? "${difference.inMinutes} mins"
-                                            : difference.inMinutes <= 0? differenceEndtime.inMinutes > 0? "Live" : "Completed" : "Completed",
+                                            : difference.inMinutes <= 0? 
+                                            timeline.isLive()? "Live" : "Completed" : "Completed",
                                 style: AppText.l2b!
                                     .copyWith(color: Colors.blue[900]),
                                 textAlign: TextAlign.center,

@@ -102,7 +102,7 @@ class TimelineModel {
 
   bool isLive() {
     final now = DateTime.now();
-    return now.difference(startTime).inMinutes < 0 && now.difference(endTime).inMinutes > 0;
+    return now.difference(startTime).inMinutes >= 0 && now.difference(endTime).inMinutes < 0;
   }
 
   bool isCompleted() {

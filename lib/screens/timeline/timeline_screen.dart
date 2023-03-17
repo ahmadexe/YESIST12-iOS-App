@@ -45,7 +45,7 @@ class TimelineScreen extends StatelessWidget {
                 date: DateTime.now(),
                 description: "Description",
                 startTime: DateTime.now(),
-                endTime: DateTime(2023, 3, 14),
+                endTime: DateTime(2023, 3, 19),
                 eventUrl: "s",
                 speakers: ["Ahmad"],
               ),
