@@ -7,7 +7,6 @@ class _TimelineCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final difference = timeline.startTime.difference(DateTime.now());
-    final differenceEndtime = timeline.endTime.difference(DateTime.now());
 
     return SizedBox(
       height: AppDimensions.normalize(53),
@@ -51,15 +50,19 @@ class _TimelineCard extends StatelessWidget {
                         children: [
                           Text(
                             DateFormat("hh:mm a").format(timeline.startTime),
-                            style:
-                                AppText.l2b!.copyWith(color: Colors.blue[900]),
+                            style: AppText.l2b!.copyWith(
+                                color: timeline.isLive()
+                                    ? Colors.red[700]
+                                    : Colors.blue[900]),
                           ),
                           Container(
                             height: 20,
                             width: 90,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: Colors.blue,
+                              color: timeline.isLive()
+                                  ? Colors.red[700]
+                                  : Colors.blue,
                             ),
                             child: Center(
                               child: Text(
@@ -69,10 +72,15 @@ class _TimelineCard extends StatelessWidget {
                                         ? "${difference.inHours} hours"
                                         : difference.inMinutes > 0
                                             ? "${difference.inMinutes} mins"
-                                            : difference.inMinutes <= 0? 
-                                            timeline.isLive()? "Live" : "Completed" : "Completed",
-                                style: AppText.l2b!
-                                    .copyWith(color: Colors.blue[900]),
+                                            : difference.inMinutes <= 0
+                                                ? timeline.isLive()
+                                                    ? "Live"
+                                                    : "Completed"
+                                                : "Completed",
+                                style: AppText.l2b!.copyWith(
+                                    color: timeline.isLive()
+                                        ? Colors.white
+                                        : Colors.blue[900]),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -94,13 +102,21 @@ class _TimelineCard extends StatelessWidget {
                                   width: 90,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    color: Colors.blue,
+                                    color: timeline.isLive()
+                                        ? Colors.red[700]
+                                        : Colors.blue,
                                   ),
                                   child: Center(
                                     child: Text(
-                                      "Completed",
-                                      style: AppText.l2b!
-                                          .copyWith(color: Colors.blue[900]),
+                                      timeline.isLive()
+                                          ? "Join"
+                                          : timeline.isCompleted()
+                                              ? "Completed"
+                                              : "View",
+                                      style: AppText.l2b!.copyWith(
+                                          color: timeline.isLive()
+                                              ? Colors.white
+                                              : Colors.blue[900]),
                                       textAlign: TextAlign.center,
                                     ),
                                   ),
