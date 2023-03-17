@@ -99,4 +99,14 @@ class TimelineModel {
       eventUrl.hashCode ^
       speakers.hashCode;
   }
+
+  bool isLive() {
+    final now = DateTime.now();
+    return now.difference(startTime).inMinutes < 0 && now.difference(endTime).inMinutes > 0;
+  }
+
+  bool isCompleted() {
+    final now = DateTime.now();
+    return now.difference(endTime).inMinutes > 0;
+  }
 }
