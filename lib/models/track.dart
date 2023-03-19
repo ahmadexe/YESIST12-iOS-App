@@ -10,6 +10,7 @@ class Track {
   final String name;
   final String rules;
   final String sp;
+  final String imgUrl;
   Track({
     required this.firstPrize,
     required this.secondPrize,
@@ -19,6 +20,7 @@ class Track {
     required this.name,
     required this.rules,
     required this.sp,
+    required this.imgUrl,
   });
   
 
@@ -31,6 +33,7 @@ class Track {
     String? name,
     String? rules,
     String? sp,
+    String? imgUrl,
   }) {
     return Track(
       firstPrize: firstPrize ?? this.firstPrize,
@@ -41,6 +44,7 @@ class Track {
       name: name ?? this.name,
       rules: rules ?? this.rules,
       sp: sp ?? this.sp,
+      imgUrl: imgUrl ?? this.imgUrl,
     );
   }
 
@@ -54,6 +58,7 @@ class Track {
       'name': name,
       'rules': rules,
       'sp': sp,
+      'imgUrl': imgUrl,
     };
   }
 
@@ -67,6 +72,7 @@ class Track {
       name: map['name'] as String,
       rules: map['rules'] as String,
       sp: map['sp'] as String,
+      imgUrl: map['imgUrl'] as String,
     );
   }
 
@@ -76,7 +82,7 @@ class Track {
 
   @override
   String toString() {
-    return 'Track(firstPrize: $firstPrize, secondPrize: $secondPrize, description: $description, fees: $fees, id: $id, name: $name, rules: $rules, sp: $sp)';
+    return 'Track(firstPrize: $firstPrize, secondPrize: $secondPrize, description: $description, fees: $fees, id: $id, name: $name, rules: $rules, sp: $sp, imgUrl: $imgUrl)';
   }
 
   @override
@@ -91,7 +97,8 @@ class Track {
       other.id == id &&
       other.name == name &&
       other.rules == rules &&
-      other.sp == sp;
+      other.sp == sp &&
+      other.imgUrl == imgUrl;
   }
 
   @override
@@ -103,6 +110,7 @@ class Track {
       id.hashCode ^
       name.hashCode ^
       rules.hashCode ^
-      sp.hashCode;
+      sp.hashCode ^
+      imgUrl.hashCode;
   }
 }

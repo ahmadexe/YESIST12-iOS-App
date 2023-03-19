@@ -4,7 +4,7 @@ import 'package:yesist_ios_app/configs/static_colors.dart';
 import 'package:yesist_ios_app/screens/finale/finale_screen.dart';
 import 'package:yesist_ios_app/screens/more_info/more_info_screen.dart';
 import 'package:yesist_ios_app/screens/timeline/timeline_screen.dart';
-import 'package:yesist_ios_app/screens/tracks/tracks.dart';
+import 'package:yesist_ios_app/screens/tracks/tracks_screen.dart';
 
 import 'screens/home/home_screen.dart';
 
