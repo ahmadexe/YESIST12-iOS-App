@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/models/track.dart';
@@ -22,8 +23,8 @@ class TrackCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(
               AppDimensions.normalize(10),
             ),
-            child: Image.network(
-              track.imgUrl,
+            child: CachedNetworkImage(
+              imageUrl: track.imgUrl,
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,
