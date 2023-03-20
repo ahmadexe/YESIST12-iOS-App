@@ -18,7 +18,7 @@ class MobileLayout extends StatefulWidget {
 
 class _MobileLayoutState extends State<MobileLayout> {
   late PageController _pageController;
-  
+
   @override
   void initState() {
     super.initState();
@@ -49,12 +49,12 @@ class _MobileLayoutState extends State<MobileLayout> {
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
         onPageChanged: onPageChanged,
-        children: const [
-          HomeScreen(),
+        children: [
+          const HomeScreen(),
           TimelineScreen(),
-          TracksScreen(),
-          FinaleScreen(),
-          MoreInfoScreen(),
+          const TracksScreen(),
+          const FinaleScreen(),
+          const MoreInfoScreen(),
         ],
       ),
       bottomNavigationBar: CupertinoTabBar(
