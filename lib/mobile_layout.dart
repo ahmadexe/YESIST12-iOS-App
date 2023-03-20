@@ -6,6 +6,7 @@ import 'package:yesist_ios_app/screens/more_info/more_info_screen.dart';
 import 'package:yesist_ios_app/screens/timeline/timeline_screen.dart';
 import 'package:yesist_ios_app/screens/tracks/tracks_screen.dart';
 
+import 'providers/app_provider.dart';
 import 'screens/home/home_screen.dart';
 
 class MobileLayout extends StatefulWidget {
@@ -16,9 +17,8 @@ class MobileLayout extends StatefulWidget {
 }
 
 class _MobileLayoutState extends State<MobileLayout> {
-  int _page = 0;
   late PageController _pageController;
-
+  
   @override
   void initState() {
     super.initState();
@@ -37,13 +37,13 @@ class _MobileLayoutState extends State<MobileLayout> {
   }
 
   onPageChanged(int page) {
-    setState(() {
-      _page = page;
-    });
+    AppProvider.state(context).setBottomNavIndex(page);
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    final app = AppProvider.state(context);
     return Scaffold(
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
@@ -65,12 +65,16 @@ class _MobileLayoutState extends State<MobileLayout> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined,
-                  color: _page == 0 ? StaticColors.primaryColor : Colors.grey),
+                  color: app.bottomNavIndex == 0
+                      ? StaticColors.primaryColor
+                      : Colors.grey),
               backgroundColor: Colors.white,
               label: ""),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.calendar,
-                color: _page == 1 ? StaticColors.primaryColor : Colors.grey),
+                color: app.bottomNavIndex == 1
+                    ? StaticColors.primaryColor
+                    : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
 
@@ -78,7 +82,9 @@ class _MobileLayoutState extends State<MobileLayout> {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.circle_grid_3x3_fill,
-                color: _page == 2 ? StaticColors.primaryColor : Colors.grey),
+                color: app.bottomNavIndex == 2
+                    ? StaticColors.primaryColor
+                    : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
 
@@ -86,14 +92,18 @@ class _MobileLayoutState extends State<MobileLayout> {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.location_fill,
-                color: _page == 3 ? StaticColors.primaryColor : Colors.grey),
+                color: app.bottomNavIndex == 3
+                    ? StaticColors.primaryColor
+                    : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
             // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more_horiz,
-                color: _page == 4 ? StaticColors.primaryColor : Colors.grey),
+                color: app.bottomNavIndex == 4
+                    ? StaticColors.primaryColor
+                    : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
 
