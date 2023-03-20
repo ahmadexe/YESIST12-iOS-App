@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
+import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
 
 part 'widgets/_resources_tile.dart';
@@ -34,7 +35,10 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => const NotificationsScreen()));
+                    },
                     icon: const Icon(Icons.notifications_none))
               ],
             ),
