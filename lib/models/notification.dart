@@ -1,23 +1,23 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-class Notification {
+class NotificationModel {
   final String body;
   final DateTime expiresOn;
   final String title;
-  
-  Notification({
+  NotificationModel({
     required this.body,
     required this.expiresOn,
     required this.title,
   });
+  
 
-  Notification copyWith({
+  NotificationModel copyWith({
     String? body,
     DateTime? expiresOn,
     String? title,
   }) {
-    return Notification(
+    return NotificationModel(
       body: body ?? this.body,
       expiresOn: expiresOn ?? this.expiresOn,
       title: title ?? this.title,
@@ -32,8 +32,8 @@ class Notification {
     };
   }
 
-  factory Notification.fromMap(Map<String, dynamic> map) {
-    return Notification(
+  factory NotificationModel.fromMap(Map<String, dynamic> map) {
+    return NotificationModel(
       body: map['body'] as String,
       expiresOn: DateTime.fromMillisecondsSinceEpoch(map['expiresOn'] as int),
       title: map['title'] as String,
@@ -42,13 +42,13 @@ class Notification {
 
   String toJson() => json.encode(toMap());
 
-  factory Notification.fromJson(String source) => Notification.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory NotificationModel.fromJson(String source) => NotificationModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
-  String toString() => 'Notification(body: $body, expiresOn: $expiresOn, title: $title)';
+  String toString() => 'NotificationModel(body: $body, expiresOn: $expiresOn, title: $title)';
 
   @override
-  bool operator ==(covariant Notification other) {
+  bool operator ==(covariant NotificationModel other) {
     if (identical(this, other)) return true;
   
     return 

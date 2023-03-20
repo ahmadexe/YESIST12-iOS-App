@@ -45,7 +45,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   hydrated_bloc: ^9.1.0
   # Svg images
-  flutter_svg: ^2.0.3
+  flutter_svg: ^2.0.4
   cached_network_image: ^3.2.3
 
 dev_dependencies:
