@@ -17,6 +17,21 @@ class AccomodationsScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Accomodations'),
         ),
-        body: AccomodationsCard(accomodation: DummyData.accomodations[0]));
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: ListView.separated(
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                return AccomodationsCard(
+                  accomodation: DummyData.accomodations[0],
+                );
+              },
+              separatorBuilder: (context, index) {
+                return Space.y!;
+              },
+            ),
+          ),
+        ));
   }
 }
