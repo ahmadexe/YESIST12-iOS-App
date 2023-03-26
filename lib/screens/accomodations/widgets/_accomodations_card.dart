@@ -14,34 +14,43 @@ class AccomodationsCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              width: double.infinity,
-              height: AppDimensions.normalize(100),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 7,
+                child: Container(
+                  width: double.infinity,
+                  height: AppDimensions.normalize(100),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: CachedNetworkImage(
+                    imageUrl: accomodation.image,
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
-              child: CachedNetworkImage(
-                imageUrl: accomodation.image,
-                fit: BoxFit.fill,
+              Expanded(
+                child: Text(
+                  accomodation.name,
+                  style: AppText.b1b,
+                ),
               ),
-            ),
-            Space.y!,
-            Text(
-              accomodation.name,
-              style: AppText.h3b,
-            ),
-            SizedBox(
-              width: AppDimensions.normalize(60),
-              child: ElevatedButton(
-                onPressed: () {},
-                child: const Text("Know more"),
-              ),
-            )
-          ],
+              Expanded(
+                child: SizedBox(
+                  width: AppDimensions.normalize(60),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Know more"),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
