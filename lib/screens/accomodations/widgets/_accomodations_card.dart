@@ -29,12 +29,11 @@ class AccomodationsCard extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-            Space.y1!,
+            Space.y!,
             Text(
               accomodation.name,
               style: AppText.h3b,
             ),
-            Space.y1!,
             SizedBox(
               width: AppDimensions.normalize(60),
               child: ElevatedButton(
