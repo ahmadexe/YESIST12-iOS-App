@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
@@ -31,31 +32,51 @@ class PlacesDetailsScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   place.name,
-                  style: AppText.h2b!.w(5),
+                  style: AppText.h2!.w(6),
                 ),
-                Space.y!,
-                RatingBar.builder(
-                  initialRating: place.stars,
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  itemBuilder: (context, _) => const Icon(
-                    Icons.star,
-                    color: Colors.amber,
-                  ),
-                  onRatingUpdate: (rating) {},
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    RatingBar.builder(
+                      initialRating: place.stars,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      onRatingUpdate: (rating) {},
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(CupertinoIcons.location_fill),
+                      color: Colors.blue,
+                    )
+                  ],
                 ),
                 Text(
                   place.location,
-                  style: AppText.l1,
+                  style: AppText.l2,
+                ),
+                const Divider(
+                  height: 10,
+                ),
+                Space.y2!,
+                Text(
+                  "Description",
+                  style: AppText.h2!.w(6),
+                ),
+                Text(
+                  place.description,
+                  style: AppText.b2,
                 ),
               ],
             ),
