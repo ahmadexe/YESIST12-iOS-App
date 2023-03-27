@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/app_typography.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
+import 'package:yesist_ios_app/screens/places/places_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
 
 import 'data/data.dart';
@@ -48,6 +49,17 @@ class MoreInfoScreen extends StatelessWidget {
                       Data.data[index]['title'],
                       style: AppText.l1!.copyWith(color: Colors.black),
                     ),
+                    onTap: () {
+                      switch(Data.data[index]['title']) {
+                        case 'Places to visit':
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const PlacesScreen(),
+                            ),
+                          );
+                          break;
+                      }
+                    },
                   );
                 },
               ),
