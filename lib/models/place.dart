@@ -5,11 +5,12 @@ class Place {
   final String description;
   final String id;
   final String image1;
-  final String lat;
-  final String lng;
+  final double lat;
+  final double lng;
   final String location;
   final String name;
   final int stars;
+  
   Place({
     required this.description,
     required this.id,
@@ -20,13 +21,14 @@ class Place {
     required this.name,
     required this.stars,
   });
+  
 
   Place copyWith({
     String? description,
     String? id,
     String? image1,
-    String? lat,
-    String? lng,
+    double? lat,
+    double? lng,
     String? location,
     String? name,
     int? stars,
@@ -61,8 +63,8 @@ class Place {
       description: map['description'] as String,
       id: map['id'] as String,
       image1: map['image1'] as String,
-      lat: map['lat'] as String,
-      lng: map['lng'] as String,
+      lat: map['lat'] as double,
+      lng: map['lng'] as double,
       location: map['location'] as String,
       name: map['name'] as String,
       stars: map['stars'] as int,

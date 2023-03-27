@@ -1,7 +1,7 @@
 part of '../places_screen.dart';
 
 class _Banner extends StatelessWidget {
-  const _Banner({super.key});
+  const _Banner();
 
   @override
   Widget build(BuildContext context) {
