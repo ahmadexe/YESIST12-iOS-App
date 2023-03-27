@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/dummy_data/dummy_data.dart';
 import 'package:yesist_ios_app/models/place.dart';
+import 'package:yesist_ios_app/screens/places_details/places_details_screen.dart';
 
 part 'widgets/_banner.dart';
 part 'widgets/_places_card.dart';

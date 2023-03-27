@@ -9,8 +9,7 @@ class Place {
   final double lng;
   final String location;
   final String name;
-  final int stars;
-  
+  final double stars;
   Place({
     required this.description,
     required this.id,
@@ -21,7 +20,6 @@ class Place {
     required this.name,
     required this.stars,
   });
-  
 
   Place copyWith({
     String? description,
@@ -31,7 +29,7 @@ class Place {
     double? lng,
     String? location,
     String? name,
-    int? stars,
+    double? stars,
   }) {
     return Place(
       description: description ?? this.description,
@@ -67,7 +65,7 @@ class Place {
       lng: map['lng'] as double,
       location: map['location'] as String,
       name: map['name'] as String,
-      stars: map['stars'] as int,
+      stars: map['stars'] as double,
     );
   }
 
