@@ -35,6 +35,7 @@ class FinaleScreen extends StatelessWidget {
               ),
               const _SecondaryInfoTile(
                 title: "VIEW MAP",
+                isMap: true,
               ),
               Space.y!,
               _ResoucesTile(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:yesist_ios_app/configs/app_dimensions.dart';
-import 'package:yesist_ios_app/configs/space.dart';
 import 'package:yesist_ios_app/mobile_layout.dart';
 import 'package:yesist_ios_app/providers/app_provider.dart';
 

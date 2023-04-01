@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/app_typography.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
+import 'package:yesist_ios_app/mobile_layout.dart';
+import 'package:yesist_ios_app/providers/app_provider.dart';
 import 'package:yesist_ios_app/screens/about/about_screen.dart';
 import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/screens/places/places_screen.dart';
@@ -13,6 +15,8 @@ class MoreInfoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final app = AppProvider.state(context);
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: AppConstants.toolbarHeight2,
@@ -75,6 +79,43 @@ class MoreInfoScreen extends StatelessWidget {
                               builder: (_) => const NotificationsScreen(),
                             ),
                           );
+                          break;
+
+                        case 'Finale':
+                          app.setBottomNavIndex(3);
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const MobileLayout(),
+                            ),
+                          );
+                          break;
+
+                        case 'Home':
+                          app.setBottomNavIndex(0);
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const MobileLayout(),
+                            ),
+                          );
+                          break;
+
+                        case 'Timeline':
+                          app.setBottomNavIndex(1);
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const MobileLayout(),
+                            ),
+                          );
+                          break;
+
+                        case 'Tracks':
+                          app.setBottomNavIndex(2);
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const MobileLayout(),
+                            ),
+                          );
+                          break;
                       }
                     },
                   );
