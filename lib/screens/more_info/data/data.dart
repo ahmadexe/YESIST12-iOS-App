@@ -29,7 +29,7 @@ class Data {
     },
     {
       'icon': Icons.sms_failed_outlined,
-      'title': 'About us',
+      'title': 'About Us',
     },
     {
       'icon': Icons.notifications,

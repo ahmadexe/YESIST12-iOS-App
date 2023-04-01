@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/app_typography.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
+import 'package:yesist_ios_app/screens/about/about_screen.dart';
 import 'package:yesist_ios_app/screens/places/places_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
 
@@ -55,6 +56,14 @@ class MoreInfoScreen extends StatelessWidget {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const PlacesScreen(),
+                            ),
+                          );
+                          break;
+                        
+                        case 'About Us':
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const AboutScreen(),
                             ),
                           );
                           break;
