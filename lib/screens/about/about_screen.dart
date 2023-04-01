@@ -31,11 +31,21 @@ class AboutScreen extends StatelessWidget {
             ),
             ListView.builder(
               shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: AppStrings.aboutusMission.length,
               itemBuilder: (context, index) {
                 return _BulletPoint(text: AppStrings.aboutusMission[index]);
               },
-            )
+            ),
+            Space.y!,
+            Text(
+              'Our Vision',
+              style: AppText.h2!.w(6),
+            ),
+            Text(
+              AppStrings.aboutusVision,
+              style: AppText.l1,
+            ),
           ],
         ),
       ),

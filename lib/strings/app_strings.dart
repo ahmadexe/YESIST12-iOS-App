@@ -9,4 +9,7 @@ class AppStrings {
     '''Bridging the gap between mentors and mentees from industry and academics, thereby providing a strong network.''',
     '''Encouraging integrating work in creating solutions for social issues.'''
   ];
+
+  static const String aboutusVision =
+      '''To impart social responsibility and ethics as a part of continuing education in young minds through activities and encourage service-oriented engineering practices.''';
 }
