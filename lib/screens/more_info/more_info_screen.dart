@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/app_typography.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
 import 'package:yesist_ios_app/screens/about/about_screen.dart';
+import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/screens/places/places_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
 
@@ -51,7 +52,7 @@ class MoreInfoScreen extends StatelessWidget {
                       style: AppText.l1!.copyWith(color: Colors.black),
                     ),
                     onTap: () {
-                      switch(Data.data[index]['title']) {
+                      switch (Data.data[index]['title']) {
                         case 'Places to visit':
                           Navigator.of(context).push(
                             MaterialPageRoute(
@@ -59,7 +60,7 @@ class MoreInfoScreen extends StatelessWidget {
                             ),
                           );
                           break;
-                        
+
                         case 'About Us':
                           Navigator.of(context).push(
                             MaterialPageRoute(
@@ -67,6 +68,13 @@ class MoreInfoScreen extends StatelessWidget {
                             ),
                           );
                           break;
+
+                        case 'Notifcation History':
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const NotificationsScreen(),
+                            ),
+                          );
                       }
                     },
                   );
