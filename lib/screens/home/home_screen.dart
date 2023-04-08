@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
+import 'package:yesist_ios_app/dummy_data/dummy_data.dart';
+import 'package:yesist_ios_app/models/home_banner.dart';
 import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
 import 'package:yesist_ios_app/utils/url_utils.dart';
@@ -59,7 +61,9 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const _HomeCard(),
+              const _HomeCard(
+                homeBanner: DummyData.homeBanner,
+              ),
               Space.y2!,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),

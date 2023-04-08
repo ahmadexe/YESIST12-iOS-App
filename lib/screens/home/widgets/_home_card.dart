@@ -1,7 +1,8 @@
 part of '../home_screen.dart';
 
 class _HomeCard extends StatelessWidget {
-  const _HomeCard();
+  final HomeBanner homeBanner;
+  const _HomeCard({required this.homeBanner});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +19,13 @@ class _HomeCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Room Allocation",
+              homeBanner.cardHeader,
               style: AppText.h3b!.copyWith(color: Colors.white),
             ),
             Space.y!,
             GestureDetector(
               onTap: (){
-                UrlUtils.launchTheUrl(AppConstants.viewPdfUrl);
+                UrlUtils.launchTheUrl(homeBanner.cardBtnUrl);
               },
               child: Container(
                 height: AppDimensions.normalize(13),
@@ -36,7 +37,7 @@ class _HomeCard extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "View PDF",
+                    homeBanner.cardBtnText,
                     style: AppText.l1b!.copyWith(color: Colors.white),
                   ),
                 ),

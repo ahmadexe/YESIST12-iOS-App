@@ -1,6 +1,8 @@
 import 'package:yesist_ios_app/models/accomodation.dart';
+import 'package:yesist_ios_app/models/home_banner.dart';
 import 'package:yesist_ios_app/models/place.dart';
 import 'package:yesist_ios_app/models/track.dart';
+import 'package:yesist_ios_app/static/constants.dart';
 
 class DummyData {
   static List<Track> tracks = [
@@ -177,4 +179,6 @@ class DummyData {
       stars: 5,
     ),
   ];
+
+  static const homeBanner = HomeBanner(cardBtnText: 'View PDF', cardBtnUrl: AppConstants.viewPdfUrl, cardHeader: 'Room Allocation', cardDescription: ''); 
 }
