@@ -3,8 +3,10 @@ import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
 import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
+import 'package:yesist_ios_app/utils/url_utils.dart';
 
 part 'widgets/_resources_tile.dart';
+part 'widgets/_home_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -57,6 +59,8 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const _HomeCard(),
+              Space.y2!,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: Row(
