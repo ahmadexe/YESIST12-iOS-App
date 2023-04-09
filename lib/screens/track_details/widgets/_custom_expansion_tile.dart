@@ -1,6 +1,5 @@
 part of '../track_details_screen.dart';
 
-
 class _CustomExpansionTile extends StatelessWidget {
   final String title;
   final String description;
@@ -8,42 +7,34 @@ class _CustomExpansionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dataList = StringUtils.numericSeperation(description);
+    
     return Card(
       color: StaticColors.greyTile,
       child: Theme(
-        data: Theme.of(context).copyWith(dividerColor: Colors.grey[200]),
+        data: Theme.of(context).copyWith(
+            dividerColor: Colors.grey[200],
+            colorScheme:
+                ColorScheme.fromSwatch().copyWith(secondary: Colors.black),
+                ),
         child: ExpansionTile(
-          // key: Key(category.key.toString()),
           maintainState: true,
-          title: Row(
-            children: [
-              Image.asset("assets/images/tile_vector.png",
-                  height: 28,
-                  width: MediaQuery.of(context).size.width * 0.06,
-                  fit: BoxFit.fill),
-              // generateIcon(category.key),
-              // Space.xf(2),
-              Text(
-                "  $title",
-                style: AppText.b1!.copyWith(color: Colors.white),
-              ),
-            ],
+          title: Text(
+            title,
+            style: AppText.b1!,
           ),
-          iconColor: Colors.white,
-          collapsedIconColor: Colors.white,
+          iconColor: Colors.black,
+          collapsedIconColor: Colors.black,
           children: [
-            ListTile(
-              tileColor: Colors.grey[200],
-              onTap: () {},
-              dense: true,
-              contentPadding: const EdgeInsets.all(8),
-              visualDensity: VisualDensity.compact,
-              minLeadingWidth: 10,
-              title: Text(
-                description,
-                style: AppText.b2,
-              ),
-            )
+            ...dataList.map((e) {
+              return ListTile(
+                title: Text(
+                  e,
+                  style: AppText.l1!,
+                ),
+                tileColor: Colors.white,
+              );
+            })
           ],
         ),
       ),

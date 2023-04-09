@@ -9,14 +9,16 @@ class DummyData {
     Track(
       firstPrize: '500\$',
       secondPrize: '200\$',
-      description: "This is a description",
-      fees: '100',
+      description: "Innovation Challenge is an international project competition established by IEEE Madras Section and IEEE Education Society to encourage the participants to come up with innovative ideas for the social and humanitarian issues. Here YESIST12 acts as a platform to bridge the gap between the engineers and visonaries to contribute to the society with innovations.This exceptional platform conducts competition in two stages. The preliminary stage is conducted across Asian and African countries and the team that tops the round wins a chance to compete globally to address humanitarian and social issues like poverty, famine, special needs, women safety, healthcare, disaster management, and many more",
+      fees:
+          '1. Prize Money will be announce later.2. Vibrant Pilot Awards3. Training Opportunities4. Certificates will be provided for the participants',
       id: 1,
       name: 'Track 1',
-      rules: 'Some rules',
-      sp: 'Some sp',
+      rules:
+          '1. Under the Innovation Challenge theme, the projects can be Mobile Apps or Computer Based or IoT based.2. In addition to developing the projects, the developers should ensure that their creation follows the international industry level technical standards set by the various agencies and approved universally. The evaluation criteria will be as follows:a. Creativityb. Applicationc. Relevance to the themed. Application of Standardse. Deliverability3. Students with drive and passion towards helping humanity are invited to register for the competition. The first round of the competition is to be held all over Asia in the pilots selected on the basis of registration. The winning teams will be called for the final round to be organised in September 2021.',
       imgUrl:
           'https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1158&q=80',
+      sp: '1. Novelty2. Clarity3. Feasibility and Practicability4. User Experience5. Scale of impact6. Sustainability7. Potential for future work progression.',
     ),
     Track(
       firstPrize: '500\$',
@@ -180,5 +182,9 @@ class DummyData {
     ),
   ];
 
-  static const homeBanner = HomeBanner(cardBtnText: 'View PDF', cardBtnUrl: AppConstants.viewPdfUrl, cardHeader: 'Room Allocation', cardDescription: ''); 
+  static const homeBanner = HomeBanner(
+      cardBtnText: 'View PDF',
+      cardBtnUrl: AppConstants.viewPdfUrl,
+      cardHeader: 'Room Allocation',
+      cardDescription: '');
 }
