@@ -20,7 +20,6 @@ class TrackDetailsScreen extends StatelessWidget {
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
             expandedHeight: AppDimensions.normalize(60),
-            floating: false,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
