@@ -69,40 +69,6 @@ class _TimelineScreenState extends State<TimelineScreen> {
             ),
           ),
           Positioned(
-            top: AppDimensions.normalize(55),
-            left: AppDimensions.normalize(5),
-            child: SizedBox(
-              width: AppDimensions.normalize(70),
-              child: ExpansionTile(
-                maintainState: true,
-                title: Text(
-                  DateFormat('MMMMd').format(_selectedDate),
-                  style: AppText.b1!.copyWith(color: Colors.white),
-                ),
-                iconColor: Colors.white,
-                collapsedIconColor: Colors.white,
-                children: [
-                  FormBuilderDateTimePicker(
-                    name: 'date',
-                    initialDate: DateTime.now(),
-                    initialValue: DateTime.now(),
-                    inputType: InputType.date,
-                    format: DateFormat("MM-dd-yyyy"),
-                    decoration: const InputDecoration(labelText: "Date"),
-                    initialEntryMode: DatePickerEntryMode.calendar,
-                    onChanged: (value) {
-                      if (value != null) {
-                        setState(() {
-                          _selectedDate = value;
-                        });
-                      }
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
             top: AppDimensions.normalize(50),
             right: AppDimensions.normalize(6),
             child: Text(
@@ -140,6 +106,69 @@ class _TimelineScreenState extends State<TimelineScreen> {
               },
             ),
           ),
+           Positioned(
+            top: AppDimensions.normalize(55),
+            left: AppDimensions.normalize(5),
+            child: SizedBox(
+              width: AppDimensions.normalize(70),
+              child: ExpansionTile(
+                maintainState: true,
+                title: GestureDetector(
+                  onTap: () {
+                    showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("Select Date"),
+                    content: FormBuilderDateTimePicker(
+                      name: 'date',
+                      initialDate: DateTime.now(),
+                      initialValue: DateTime.now(),
+                      inputType: InputType.date,
+                      format: DateFormat("MM-dd-yyyy"),
+                      decoration: const InputDecoration(labelText: "Date"),
+                      initialEntryMode: DatePickerEntryMode.calendar,
+                      onChanged: (value) {
+                        if (value != null) {
+                          Navigator.of(context).pop();
+                          setState(() {
+                            _selectedDate = value;
+                          });
+                        }
+                      },
+                    ),
+                  );
+                },
+              );
+                  },
+                  child: Text(
+                    DateFormat('MMMMd').format(_selectedDate),
+                    style: AppText.b1!.copyWith(color: Colors.white),
+                  ),
+                ),
+                iconColor: Colors.white,
+                collapsedIconColor: Colors.white,
+                children: [
+                  // FormBuilderDateTimePicker(
+                  //   name: 'date',
+                  //   initialDate: DateTime.now(),
+                  //   initialValue: DateTime.now(),
+                  //   inputType: InputType.date,
+                  //   format: DateFormat("MM-dd-yyyy"),
+                  //   decoration: const InputDecoration(labelText: "Date"),
+                  //   initialEntryMode: DatePickerEntryMode.calendar,
+                  //   onChanged: (value) {
+                  //     if (value != null) {
+                  //       setState(() {
+                  //         _selectedDate = value;
+                  //       });
+                  //     }
+                  //   },
+                  // ),
+                ],
+              ),
+            ),
+                   ),
         ],
       ),
     );
