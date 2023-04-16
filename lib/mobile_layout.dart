@@ -22,8 +22,8 @@ class _MobileLayoutState extends State<MobileLayout> {
   @override
   void initState() {
     super.initState();
-
-    _pageController = PageController();
+    final app = AppProvider.state(context);
+    _pageController = PageController(initialPage: app.bottomNavIndex);
   }
 
   @override
@@ -32,12 +32,13 @@ class _MobileLayoutState extends State<MobileLayout> {
     _pageController.dispose();
   }
 
-  void navigationTapped(int page) {
-    _pageController.jumpToPage(page);
-  }
+  // void navigationTapped(int page) {
+  //   _pageController.jumpToPage(page);
+  // }
 
   onPageChanged(int page) {
     AppProvider.state(context).setBottomNavIndex(page);
+    _pageController.jumpToPage(page);
     setState(() {});
   }
 
@@ -111,7 +112,7 @@ class _MobileLayoutState extends State<MobileLayout> {
           ),
         ],
         onTap: (page) {
-          navigationTapped(page);
+          onPageChanged(page);
         },
       ),
     );
