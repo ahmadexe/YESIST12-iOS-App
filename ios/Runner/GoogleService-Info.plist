@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>58323062832-kv8b2c9mishc1soua1uim3m33deegnv7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.58323062832-kv8b2c9mishc1soua1uim3m33deegnv7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDbueqO2heLvnlbh0fc0m720OS7azXCaPU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>58323062832</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.yesistIosApp</string>
+	<key>PROJECT_ID</key>
+	<string>yesist12</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yesist12.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:58323062832:ios:bce564bb4878b484fc1df5</string>
+	<key>DATABASE_URL</key>
+	<string>https://yesist12-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
