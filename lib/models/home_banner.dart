@@ -39,10 +39,10 @@ class HomeBanner {
 
   factory HomeBanner.fromMap(Map<String, dynamic> map) {
     return HomeBanner(
-      cardBtnText: map['cardBtnText'] as String,
-      cardBtnUrl: map['cardBtnUrl'] as String,
-      cardHeader: map['cardHeader'] as String,
-      cardDescription: map['cardDescription'] as String,
+      cardBtnText: map['card_button_text'] as String,
+      cardBtnUrl: map['card_button_url'] as String,
+      cardHeader: map['card_header'] as String,
+      cardDescription: map['card_description'] as String,
     );
   }
 

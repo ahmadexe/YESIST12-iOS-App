@@ -5,4 +5,6 @@ class AppConstants {
   static final toolbarHeight2 = AppDimensions.normalize(40);
   static const viewPdfUrl =
       'https://drive.google.com/file/d/1sJAcA3IzgEoJ3UCF2gVEV1m0HNzdbioX/view?usp=sharing';
+  static const colCards = 'cards';
+  static const docHomeCard = 'homeCard';
 }

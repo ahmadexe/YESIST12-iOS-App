@@ -1,7 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:yesist_ios_app/base_wrapper.dart';
+import 'package:yesist_ios_app/blocs/home/bloc/home_bloc.dart';
 import 'package:yesist_ios_app/firebase_options.dart';
 import 'package:yesist_ios_app/providers/app_provider.dart';
 import 'package:yesist_ios_app/screens/splash.dart';
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AppProvider()),
+        BlocProvider(create: (_) => HomeBloc()),
       ],
       child: BaseWrapper(
         child: MaterialApp(

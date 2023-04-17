@@ -61,6 +61,6 @@ class UI {
   }
 
   static MediaQueryData mediaQuery() => _mediaQueryData!;
-
+    
   static Size getSize() => _mediaQueryData!.size;
 }

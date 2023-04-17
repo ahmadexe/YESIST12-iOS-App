@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yesist_ios_app/blocs/home/bloc/home_bloc.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
-import 'package:yesist_ios_app/dummy_data/dummy_data.dart';
 import 'package:yesist_ios_app/models/home_banner.dart';
 import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
@@ -10,8 +11,20 @@ import 'package:yesist_ios_app/utils/url_utils.dart';
 part 'widgets/_resources_tile.dart';
 part 'widgets/_home_card.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    final homeBloc = BlocProvider.of<HomeBloc>(context);
+    homeBloc.add(GetHomeBanner());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +74,18 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const _HomeCard(
-                homeBanner: DummyData.homeBanner,
+              BlocBuilder<HomeBloc, HomeState>(
+                builder: (context, state) {
+                  if (state is HomeLoading || state is HomeInitial) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (state is HomeLoaded) {
+                    return _HomeCard(homeBanner: state.data!);
+                  } else {
+                    return Center(
+                      child: Text(state.error!),
+                    );
+                  }
+                },
               ),
               Space.y2!,
               Padding(
