@@ -91,6 +91,8 @@ class _TimelineCard extends StatelessWidget {
                       Text(
                         timeline.title,
                         style: AppText.b1!.w(6),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                       Space.y!,
                       Row(

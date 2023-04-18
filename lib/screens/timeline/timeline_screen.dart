@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:intl/intl.dart';
+import 'package:yesist_ios_app/blocs/timeline/bloc/timeline_bloc.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/models/timeline.dart';
+import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
+import 'package:yesist_ios_app/static/constants.dart';
 
 part 'widgets/_timeline_card.dart';
 
@@ -47,73 +51,43 @@ class _TimelineScreenState extends State<TimelineScreen> {
   DateTime _selectedDate = DateTime.now();
 
   @override
+  void initState() {
+    super.initState();
+    final timelineBloc = BlocProvider.of<TimelineBloc>(context);
+    timelineBloc.add(GetTimeLines());
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: AppDimensions.normalize(75),
-              color: AppTheme.c!.primary,
+      appBar: AppBar(
+        toolbarHeight: AppConstants.toolbarHeight,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Timeline",
+                  style: AppText.h1!.w(4),
+                ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const NotificationsScreen(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.notifications_none),
+                )
+              ],
             ),
-          ),
-          Positioned(
-            top: AppDimensions.normalize(20),
-            left: AppDimensions.normalize(10),
-            child: Text(
-              "Timeline",
-              style: AppText.h1!.w(5).copyWith(color: Colors.white),
-            ),
-          ),
-          Positioned(
-            top: AppDimensions.normalize(50),
-            right: AppDimensions.normalize(6),
-            child: Text(
-              DateFormat('jm').format(_selectedDate),
-              style: AppText.b1!.copyWith(color: Colors.white),
-            ),
-          ),
-          Positioned(
-            top: AppDimensions.normalize(60),
-            right: AppDimensions.normalize(6),
-            child: Text(
-              _selectedDate.timeZoneName,
-              style: AppText.b2!.copyWith(color: Colors.green[300]),
-            ),
-          ),
-          Positioned(
-            top: AppDimensions.normalize(50),
-            left: AppDimensions.normalize(10),
-            right: AppDimensions.normalize(10),
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: widget.timeline
-                  .where(
-                    (element) {
-                      return element.startTime
-                              .difference(_selectedDate)
-                              .inDays <=
-                          0;
-                    },
-                  )
-                  .toList()
-                  .length,
-              itemBuilder: (context, index) {
-                return _TimelineCard(timeline: widget.timeline[index]);
-              },
-            ),
-          ),
-          Positioned(
-            top: AppDimensions.normalize(55),
-            left: AppDimensions.normalize(5),
-            child: SizedBox(
-              width: AppDimensions.normalize(70),
-              child: ExpansionTile(
-                maintainState: true,
-                title: GestureDetector(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
                   onTap: () {
                     showDialog(
                       context: context,
@@ -147,12 +121,43 @@ class _TimelineScreenState extends State<TimelineScreen> {
                     style: AppText.b1!.copyWith(color: Colors.white),
                   ),
                 ),
-                iconColor: Colors.white,
-                collapsedIconColor: Colors.white,
-              ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      DateFormat('jm').format(_selectedDate),
+                      style: AppText.b1!.copyWith(color: Colors.white),
+                    ),
+                    Text(
+                      _selectedDate.timeZoneName,
+                      style: AppText.b2!.copyWith(color: Colors.green[300]),
+                    ),
+                  ],
+                )
+              ],
             ),
-          ),
-        ],
+          ],
+        ),
+      ),
+      body: BlocBuilder<TimelineBloc, TimelineState>(
+        builder: (context, state) {
+          if (state is TimelineLoading || state is TimelineInitial) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state is TimelineLoaded) {
+            return SizedBox(
+              height: MediaQuery.of(context).size.height * 0.8,
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: state.data!.length,
+                itemBuilder: (context, index) {
+                  return _TimelineCard(timeline: state.data![index]);
+                },
+              ),
+            );
+          } else {
+            return Center(child: Text(state.error!));
+          }
+        },
       ),
     );
   }

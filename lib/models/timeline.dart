@@ -2,6 +2,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:intl/intl.dart';
 
 class TimelineModel {
   final String title;
@@ -55,14 +56,19 @@ class TimelineModel {
   }
 
   factory TimelineModel.fromMap(Map<String, dynamic> map) {
+
+    final DateTime startTime = DateTime.parse(map['start_time']);
+    final DateTime endTime = DateTime.parse(map['end_time']);
+    final DateTime date = DateTime.parse(map['date']);
+
     return TimelineModel(
       title: map['title'] as String,
-      date: DateTime.fromMillisecondsSinceEpoch(map['date'] as int),
+      date: date,
       description: map['description'] as String,
-      startTime: DateTime.fromMillisecondsSinceEpoch(map['startTime'] as int),
-      endTime: DateTime.fromMillisecondsSinceEpoch(map['endTime'] as int),
-      eventUrl: map['eventUrl'] as String,
-      speakers: List<String>.from((map['speakers'] as List<String>)),
+      startTime: startTime,
+      endTime: endTime,
+      eventUrl: map['event_url'] as String,
+      speakers: [],
     );
   }
 
