@@ -50,12 +50,12 @@ class _MobileLayoutState extends State<MobileLayout> {
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
         onPageChanged: onPageChanged,
-        children: [
-          const HomeScreen(),
+        children: const [
+          HomeScreen(),
           TimelineScreen(),
-          const TracksScreen(),
-          const FinaleScreen(),
-          const MoreInfoScreen(),
+          TracksScreen(),
+          FinaleScreen(),
+          MoreInfoScreen(),
         ],
       ),
       bottomNavigationBar: CupertinoTabBar(

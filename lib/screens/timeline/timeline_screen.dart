@@ -12,36 +12,7 @@ part 'widgets/_timeline_card.dart';
 
 // ignore: must_be_immutable
 class TimelineScreen extends StatefulWidget {
-  final List<TimelineModel> timeline = [
-    TimelineModel(
-      title: 'Timelline model 1',
-      date: DateTime.now(),
-      description: 'Description',
-      startTime: DateTime.now(),
-      endTime: DateTime.now(),
-      eventUrl: '',
-      speakers: ['Ahmad'],
-    ),
-    TimelineModel(
-      title: 'Timelline model 1',
-      date: DateTime.now(),
-      description: 'Description',
-      startTime: DateTime.now(),
-      endTime: DateTime.now(),
-      eventUrl: '',
-      speakers: ['Ahmad'],
-    ),
-    TimelineModel(
-      title: 'Timelline model 1',
-      date: DateTime.now(),
-      description: 'Description',
-      startTime: DateTime.now(),
-      endTime: DateTime.now(),
-      eventUrl: '',
-      speakers: ['Ahmad'],
-    ),
-  ];
-  TimelineScreen({super.key});
+  const TimelineScreen({super.key});
 
   @override
   State<TimelineScreen> createState() => _TimelineScreenState();
