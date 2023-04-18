@@ -29,9 +29,13 @@ class NotificationsCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                notification.title,
-                style: AppText.h3,
+              Expanded(
+                child: Text(
+                  notification.title,
+                  style: AppText.h3,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               SvgPicture.asset('assets/svgs/rocket.svg'),
             ],
@@ -39,7 +43,7 @@ class NotificationsCard extends StatelessWidget {
           Text(
             notification.body,
             style: AppText.l1,
-            maxLines: 5,
+            maxLines: 4,
             overflow: TextOverflow.ellipsis,
           )
         ],

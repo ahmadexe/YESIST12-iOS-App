@@ -35,7 +35,7 @@ class NotificationModel {
   factory NotificationModel.fromMap(Map<String, dynamic> map) {
     return NotificationModel(
       body: map['body'] as String,
-      expiresOn: DateTime.fromMillisecondsSinceEpoch(map['expiresOn'] as int),
+      expiresOn: map['expiresOn'].toDate(),
       title: map['title'] as String,
     );
   }

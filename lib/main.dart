@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:yesist_ios_app/base_wrapper.dart';
 import 'package:yesist_ios_app/blocs/home/bloc/home_bloc.dart';
+import 'package:yesist_ios_app/blocs/notifications/bloc/notifications_bloc.dart';
 import 'package:yesist_ios_app/blocs/timeline/bloc/timeline_bloc.dart';
 import 'package:yesist_ios_app/firebase_options.dart';
 import 'package:yesist_ios_app/providers/app_provider.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AppProvider()),
         BlocProvider(create: (_) => HomeBloc()),
         BlocProvider(create: (_) => TimelineBloc()),
+        BlocProvider(create: (_) => NotificationsBloc())
       ],
       child: BaseWrapper(
         child: MaterialApp(
