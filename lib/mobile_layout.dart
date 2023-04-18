@@ -32,10 +32,6 @@ class _MobileLayoutState extends State<MobileLayout> {
     _pageController.dispose();
   }
 
-  // void navigationTapped(int page) {
-  //   _pageController.jumpToPage(page);
-  // }
-
   onPageChanged(int page) {
     AppProvider.state(context).setBottomNavIndex(page);
     _pageController.jumpToPage(page);
@@ -78,8 +74,6 @@ class _MobileLayoutState extends State<MobileLayout> {
                     : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
-
-            // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.circle_grid_3x3_fill,
@@ -88,8 +82,6 @@ class _MobileLayoutState extends State<MobileLayout> {
                     : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
-
-            // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.location_fill,
@@ -98,7 +90,6 @@ class _MobileLayoutState extends State<MobileLayout> {
                     : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
-            // backgroundColor: customPrimaryColorLight,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more_horiz,
@@ -107,8 +98,6 @@ class _MobileLayoutState extends State<MobileLayout> {
                     : Colors.grey),
             label: "",
             backgroundColor: Colors.white,
-
-            // backgroundColor: customPrimaryColorLight,
           ),
         ],
         onTap: (page) {
