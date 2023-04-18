@@ -62,6 +62,7 @@ class _TimelineScreenState extends State<TimelineScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: AppConstants.toolbarHeight,
+        automaticallyImplyLeading: false,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

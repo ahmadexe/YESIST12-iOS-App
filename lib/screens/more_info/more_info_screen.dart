@@ -20,6 +20,7 @@ class MoreInfoScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: AppConstants.toolbarHeight2,
+        automaticallyImplyLeading: false,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

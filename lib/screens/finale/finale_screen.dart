@@ -18,6 +18,7 @@ class FinaleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Finale 2022 - Venue"),
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

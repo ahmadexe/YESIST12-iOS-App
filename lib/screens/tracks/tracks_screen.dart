@@ -12,6 +12,7 @@ class TracksScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: AppConstants.toolbarHeight2,
+        automaticallyImplyLeading: false,
         centerTitle: false,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
