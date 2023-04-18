@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Place {
   final String description;
   final String id;
@@ -57,21 +59,25 @@ class Place {
   }
 
   factory Place.fromMap(Map<String, dynamic> map) {
+    GeoPoint geo = map['latlang'] as GeoPoint;
+    final lat = geo.latitude;
+    final lng = geo.longitude;
     return Place(
       description: map['description'] as String,
       id: map['id'] as String,
       image1: map['image1'] as String,
-      lat: map['lat'] as double,
-      lng: map['lng'] as double,
+      lat: lat,
+      lng: lng,
       location: map['location'] as String,
       name: map['name'] as String,
-      stars: map['stars'] as double,
+      stars: map['stars'].toDouble(),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Place.fromJson(String source) => Place.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Place.fromJson(String source) =>
+      Place.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -81,27 +87,26 @@ class Place {
   @override
   bool operator ==(covariant Place other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.description == description &&
-      other.id == id &&
-      other.image1 == image1 &&
-      other.lat == lat &&
-      other.lng == lng &&
-      other.location == location &&
-      other.name == name &&
-      other.stars == stars;
+
+    return other.description == description &&
+        other.id == id &&
+        other.image1 == image1 &&
+        other.lat == lat &&
+        other.lng == lng &&
+        other.location == location &&
+        other.name == name &&
+        other.stars == stars;
   }
 
   @override
   int get hashCode {
     return description.hashCode ^
-      id.hashCode ^
-      image1.hashCode ^
-      lat.hashCode ^
-      lng.hashCode ^
-      location.hashCode ^
-      name.hashCode ^
-      stars.hashCode;
+        id.hashCode ^
+        image1.hashCode ^
+        lat.hashCode ^
+        lng.hashCode ^
+        location.hashCode ^
+        name.hashCode ^
+        stars.hashCode;
   }
 }
