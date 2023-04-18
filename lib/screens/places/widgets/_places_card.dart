@@ -15,7 +15,7 @@ class _PlacesCard extends StatelessWidget {
         );
       },
       child: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.bottomCenter,
         children: [
           Card(
             elevation: 4,
@@ -34,11 +34,15 @@ class _PlacesCard extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: AppDimensions.normalize(55),
-            child: Text(
-              place.name,
-              style: AppText.b1b!.w(5).copyWith(color: Colors.white),
+          SizedBox(
+            width: AppDimensions.normalize(60),
+            child: Center(
+              child: Text(
+                place.name,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: AppText.b1b!.copyWith(color: Colors.white),
+              ),
             ),
           ),
         ],

@@ -20,9 +20,12 @@ class _LocationTag extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Icon(Icons.location_pin),
-              Text(
-                place.location,
-                style: AppText.b2,
+              Expanded(
+                child: Text(
+                  place.location.replaceAll('+', ' '),
+                  style: AppText.b2,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),
