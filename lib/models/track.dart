@@ -1,6 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
 class Track {
   final String firstPrize;
   final String secondPrize;
@@ -62,23 +59,19 @@ class Track {
     };
   }
 
-  factory Track.fromMap(Map<String, dynamic> map) {
+  factory Track.fromMap(Map<String, dynamic> map, String imgPath) {
     return Track(
-      firstPrize: map['firstPrize'] as String,
-      secondPrize: map['secondPrize'] as String,
-      description: map['description'] as String,
-      fees: map['fees'] as String,
-      id: map['id'] as int,
-      name: map['name'] as String,
-      rules: map['rules'] as String,
-      sp: map['sp'] as String,
-      imgUrl: map['imgUrl'] as String,
+      firstPrize: map['track_1stPrize'] as String,
+      secondPrize: map['track_2ndPrize'] as String,
+      description: map['track_description'] as String,
+      fees: map['track_fees'] as String,
+      id: map['track_id'] as int,
+      name: map['track_name'] as String,
+      rules: map['track_rules'] as String,
+      sp: map['track_sp'] as String,
+      imgUrl: imgPath,
     );
   }
-
-  String toJson() => json.encode(toMap());
-
-  factory Track.fromJson(String source) => Track.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {

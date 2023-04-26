@@ -7,6 +7,7 @@ import 'package:yesist_ios_app/blocs/home/bloc/home_bloc.dart';
 import 'package:yesist_ios_app/blocs/notifications/bloc/notifications_bloc.dart';
 import 'package:yesist_ios_app/blocs/places/bloc/places_bloc.dart';
 import 'package:yesist_ios_app/blocs/timeline/bloc/timeline_bloc.dart';
+import 'package:yesist_ios_app/blocs/tracks/bloc/tracks_bloc.dart';
 import 'package:yesist_ios_app/firebase_options.dart';
 import 'package:yesist_ios_app/providers/app_provider.dart';
 import 'package:yesist_ios_app/screens/splash.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => TimelineBloc()),
         BlocProvider(create: (_) => NotificationsBloc()),
         BlocProvider(create: (_) => PlacesBloc()),
+        BlocProvider(create: (_) => TracksBloc()),
       ],
       child: BaseWrapper(
         child: MaterialApp(

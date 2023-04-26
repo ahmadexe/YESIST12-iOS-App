@@ -46,11 +46,15 @@ dependencies:
   hydrated_bloc: ^9.1.0
   # Svg images
   flutter_svg: ^2.0.4
+  # utils
   cached_network_image: ^3.2.3
   flutter_rating_bar: ^4.0.1
   url_launcher: ^6.1.10
+  # firebase
   firebase_core: 2.3.0
   cloud_firestore: 4.1.0
+  # API Layer
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +83,7 @@ flutter:
     - assets/svgs/
     - assets/images/
     - assets/logos/
+    - assets/tracks/
 
   #   - images/a_dot_ham.jpeg
 

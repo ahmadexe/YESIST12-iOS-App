@@ -113,22 +113,29 @@ class _TimelineScreenState extends State<TimelineScreen> {
       ),
       body: BlocBuilder<TimelineBloc, TimelineState>(
         builder: (context, state) {
-          print(_selectedDate);
           if (state is TimelineLoading || state is TimelineInitial) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is TimelineLoaded) {
-            final data = state.data!.where((e) => 
-              e.isOnDate(_selectedDate)
-            ).toList();
+            final data =
+                state.data!.where((e) => e.isOnDate(_selectedDate)).toList();
             return SizedBox(
               height: MediaQuery.of(context).size.height * 0.8,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  return _TimelineCard(timeline: data[index]);
-                },
-              ),
+              child: data.isNotEmpty
+                  ? ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: data.length,
+                      itemBuilder: (context, index) {
+                        return _TimelineCard(timeline: data[index]);
+                      },
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Center(
+                        child: Text(
+                            "No tracks found for the selected date. Try changing the date!",
+                            style: AppText.h3!.w(6)),
+                      ),
+                    ),
             );
           } else {
             return Center(child: Text(state.error!));

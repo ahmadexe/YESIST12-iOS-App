@@ -26,8 +26,8 @@ class TrackDetailsScreen extends StatelessWidget {
               title: Text(
                 track.name,
               ),
-              background: CachedNetworkImage(
-                imageUrl: track.imgUrl,
+              background: Image.asset(
+                track.imgUrl,
                 fit: BoxFit.cover,
               ),
             ),

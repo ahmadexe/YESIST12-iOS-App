@@ -32,8 +32,8 @@ class TrackCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(
                 AppDimensions.normalize(10),
               ),
-              child: CachedNetworkImage(
-                imageUrl: track.imgUrl,
+              child: Image.asset(
+                track.imgUrl,
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: double.infinity,
