@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yesist_ios_app/blocs/notifications/bloc/notifications_bloc.dart';
 import 'package:yesist_ios_app/configs/app_dimensions.dart';
 import 'package:yesist_ios_app/mobile_layout.dart';
 import 'package:yesist_ios_app/providers/app_provider.dart';

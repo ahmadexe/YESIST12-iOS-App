@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:yesist_ios_app/configs/configs.dart';
 import 'package:yesist_ios_app/models/track.dart';
@@ -59,7 +58,7 @@ class TrackCard extends StatelessWidget {
               left: AppDimensions.normalize(10),
               child: Text(
                 track.name,
-                style: AppText.h1!.w(6).copyWith(color: Colors.white),
+                style: AppText.h2!.w(6).copyWith(color: Colors.white),
               ),
             ),
             Positioned(
