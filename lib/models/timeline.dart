@@ -114,4 +114,8 @@ class TimelineModel {
     final now = DateTime.now();
     return now.difference(endTime).inMinutes > 0;
   }
+
+  bool isOnDate(DateTime date) {
+    return this.date.difference(date).inDays == 0;
+  }
 }
