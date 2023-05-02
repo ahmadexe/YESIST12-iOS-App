@@ -7,7 +7,6 @@ class Repository {
     '$_basePath/tracks1.jpg',
     '$_basePath/tracks2.jpg',
     '$_basePath/tracks3.jpg',
-    '$_basePath/tracks3.jpg',
     '$_basePath/tracks4.jpg',
     '$_basePath/tracks5.jpg',
     '$_basePath/tracks6.jpg'
