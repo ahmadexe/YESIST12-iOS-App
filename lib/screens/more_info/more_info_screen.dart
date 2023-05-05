@@ -4,6 +4,7 @@ import 'package:yesist_ios_app/configs/static_colors.dart';
 import 'package:yesist_ios_app/mobile_layout.dart';
 import 'package:yesist_ios_app/providers/app_provider.dart';
 import 'package:yesist_ios_app/screens/about/about_screen.dart';
+import 'package:yesist_ios_app/screens/faqs/faqs_screen.dart';
 import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/screens/places/places_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
@@ -139,6 +140,16 @@ class MoreInfoScreen extends StatelessWidget {
                       Data.secondaryData[index]['title'],
                       style: AppText.l1!.copyWith(color: Colors.black),
                     ),
+                    onTap: () {
+                      switch (Data.secondaryData[index]['title']) {
+                        case 'FAQs':
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (_) => const FaqsScreen()),
+                          );
+                          break;
+                      }
+                    },
                   );
                 },
               ),
