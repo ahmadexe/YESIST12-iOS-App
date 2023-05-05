@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+part 'widgets/_faq_card.dart';
+
 class FaqsScreen extends StatelessWidget {
   const FaqsScreen({super.key});
 
@@ -11,11 +13,7 @@ class FaqsScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Wrap(
-          children: [
-            
-          ],
-        ),
+        child: Container()
       ),
     );
   }
