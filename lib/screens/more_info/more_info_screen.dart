@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:yesist_ios_app/configs/app_typography.dart';
 import 'package:yesist_ios_app/configs/static_colors.dart';
 import 'package:yesist_ios_app/mobile_layout.dart';
@@ -147,6 +148,12 @@ class MoreInfoScreen extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (_) => const FaqsScreen()),
                           );
+                          break;
+
+                        case "Share":
+                          const String url = "https://github.com/ahmadexe";
+                          Share.share(
+                              "Check out the GitHub of YESIST'12's iOS dev $url");
                           break;
                       }
                     },
