@@ -12,7 +12,6 @@ class _QnATile extends StatelessWidget {
       child: Theme(
         data: Theme.of(context).copyWith(dividerColor: Colors.grey[200]),
         child: ExpansionTile(
-          // key: Key(category.key.toString()),
           maintainState: true,
           title: Row(
             children: [
@@ -20,8 +19,6 @@ class _QnATile extends StatelessWidget {
                   height: 28,
                   width: MediaQuery.of(context).size.width * 0.06,
                   fit: BoxFit.fill),
-              // generateIcon(category.key),
-              // Space.xf(2),
               Text(
                 "  $title",
                 style: AppText.b1!.copyWith(color: Colors.white),
