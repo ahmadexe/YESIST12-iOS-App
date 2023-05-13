@@ -1,5 +1,5 @@
 class Data {
-  List<Map<String, dynamic>> faqTracks = [
+  static List<Map<String, dynamic>> faqTracks = [
     {
       'img': "assets/tracks/tracks1.jpg",
       'name': 'Innovation Challenge',
