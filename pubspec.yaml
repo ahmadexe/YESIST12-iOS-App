@@ -55,6 +55,7 @@ dependencies:
   cloud_firestore: 4.1.0
   # API Layer
   http: ^0.13.5
+  # Share 
   share_plus: ^7.0.0
 
 dev_dependencies:
