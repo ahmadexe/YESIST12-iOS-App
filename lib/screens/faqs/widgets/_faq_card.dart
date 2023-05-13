@@ -10,7 +10,7 @@ class _FaqCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => const FaqAnswersScreen(),
+            builder: (_) => FaqAnswersScreen(faqTrack: faqTrack),
           ),
         );
       },

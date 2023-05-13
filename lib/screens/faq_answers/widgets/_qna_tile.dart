@@ -8,25 +8,23 @@ class _QnATile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppTheme.c!.primary,
+      color: Colors.white,
       child: Theme(
-        data: Theme.of(context).copyWith(dividerColor: Colors.grey[200]),
+        data: Theme.of(context).copyWith(
+          dividerColor: Colors.grey[200],
+          unselectedWidgetColor: Colors.grey[200],
+          colorScheme: ColorScheme.light(
+            primary: Colors.grey[200]!,
+          ),
+        ),
         child: ExpansionTile(
           maintainState: true,
-          title: Row(
-            children: [
-              Image.asset("assets/images/tile_vector.png",
-                  height: 28,
-                  width: MediaQuery.of(context).size.width * 0.06,
-                  fit: BoxFit.fill),
-              Text(
-                "  $title",
-                style: AppText.b1!.copyWith(color: Colors.white),
-              ),
-            ],
+          title: Text(
+            "  $title",
+            style: AppText.b1!.copyWith(color: Colors.blue),
           ),
-          iconColor: Colors.white,
-          collapsedIconColor: Colors.white,
+          iconColor: Colors.black,
+          collapsedIconColor: Colors.black,
           children: [
             ListTile(
               tileColor: Colors.grey[200],
@@ -35,9 +33,14 @@ class _QnATile extends StatelessWidget {
               contentPadding: const EdgeInsets.all(8),
               visualDensity: VisualDensity.compact,
               minLeadingWidth: 10,
-              title: Text(
-                description,
-                style: AppText.b2,
+              title: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppDimensions.normalize(7),
+                ),
+                child: Text(
+                  description,
+                  style: AppText.b2,
+                ),
               ),
             )
           ],
