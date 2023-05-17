@@ -44,7 +44,9 @@ class AccomodationsCard extends StatelessWidget {
                 child: SizedBox(
                   width: AppDimensions.normalize(60),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      UrlUtils.launchTheUrl(accomodation.goLink);
+                    },
                     child: const Text("Know more"),
                   ),
                 ),

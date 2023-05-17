@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:yesist_ios_app/base_wrapper.dart';
+import 'package:yesist_ios_app/blocs/accomodations/bloc/accomodations_bloc.dart';
 import 'package:yesist_ios_app/blocs/home/bloc/home_bloc.dart';
 import 'package:yesist_ios_app/blocs/notifications/bloc/notifications_bloc.dart';
 import 'package:yesist_ios_app/blocs/places/bloc/places_bloc.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => NotificationsBloc()),
         BlocProvider(create: (_) => PlacesBloc()),
         BlocProvider(create: (_) => TracksBloc()),
+        BlocProvider(create: (_) => AccomodationsBloc()),
       ],
       child: BaseWrapper(
         child: MaterialApp(
