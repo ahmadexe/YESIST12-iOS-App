@@ -61,12 +61,13 @@ class _MobileLayoutState extends State<MobileLayout> {
         backgroundColor: Colors.white,
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined,
-                  color: app.bottomNavIndex == 0
-                      ? StaticColors.primaryColor
-                      : Colors.grey),
-              backgroundColor: Colors.white,
-              label: ""),
+            icon: Icon(Icons.home_outlined,
+                color: app.bottomNavIndex == 0
+                    ? StaticColors.primaryColor
+                    : Colors.grey),
+            backgroundColor: Colors.white,
+            label: "",
+          ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.calendar,
                 color: app.bottomNavIndex == 1
