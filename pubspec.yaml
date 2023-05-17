@@ -57,6 +57,7 @@ dependencies:
   http: ^0.13.5
   # Share 
   share_plus: ^7.0.0
+  # Maps 
   maps_launcher: ^2.2.0
 
 dev_dependencies:
