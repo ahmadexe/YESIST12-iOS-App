@@ -4,8 +4,12 @@ class _InfoCard extends StatelessWidget {
   final String title;
   final String subtext;
   final bool underlined;
+  final bool isTour;
   const _InfoCard(
-      {required this.title, required this.subtext, this.underlined = false});
+      {this.isTour = false,
+      required this.title,
+      required this.subtext,
+      this.underlined = false});
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +29,16 @@ class _InfoCard extends StatelessWidget {
             style: AppText.b1b!.copyWith(color: Colors.white),
           ),
           Space.y!,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
+          Center(
+            child: GestureDetector(
+              onTap: () {
+                if (isTour) {
+                  UrlUtils.launchTheUrl(AppConstants.tourUrl);
+                  return;
+                }
+                UrlUtils.launchTheUrl(subtext);
+              },
+              child: Text(
                 subtext,
                 style: AppText.l2!.copyWith(
                   color: Colors.white,
@@ -38,7 +47,7 @@ class _InfoCard extends StatelessWidget {
                       : TextDecoration.none,
                 ),
               ),
-            ],
+            ),
           )
         ],
       ),

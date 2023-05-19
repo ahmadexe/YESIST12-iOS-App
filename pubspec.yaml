@@ -58,7 +58,7 @@ dependencies:
   # Share 
   share_plus: ^7.0.0
   # Maps 
-  maps_launcher: ^2.2.0
+  map_launcher: ^2.5.0+1
 
 dev_dependencies:
   flutter_test:

@@ -29,7 +29,7 @@ class _AddressCard extends StatelessWidget {
                 Text("Address",
                     style: AppText.b1b!.copyWith(color: Colors.white)),
                 Text(
-                  "Sri Venkateshwara College of Engineering Vidyanagar, Kempegowda International Airport Road, Bengaluru - 562 157",
+                  "Arab Academy for Science, Technology & Maritime Transport (AASTMT), Abou Kir, Alexandria - Egypt P.O. Box 1029",
                   maxLines: 3,
                   style: AppText.l2!.copyWith(color: Colors.white),
                 ),
@@ -44,7 +44,7 @@ class _AddressCard extends StatelessWidget {
                       style: AppText.b1!.w(5).copyWith(color: Colors.white),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: lauchMap,
                       child: CircleAvatar(
                         radius: AppDimensions.normalize(11),
                         backgroundColor: StaticColors.primaryColor,
@@ -64,13 +64,27 @@ class _AddressCard extends StatelessWidget {
               title: "Telephone", subtext: "+919731226262", underlined: true),
           Space.y!,
           const _InfoCard(
-              title: "Website",
-              subtext: "https://www.svcengg.edu.in/",
-              underlined: true),
+            title: "Website",
+            subtext: "https://aast.edu/en/colleges/coe/alex/",
+            underlined: true,
+          ),
           Space.y!,
-          const _InfoCard(title: "3D-Tour", subtext: "Click here")
+          const _InfoCard(
+            title: "3D-Tour",
+            subtext: "Click here",
+            isTour: true,
+          )
         ],
       ),
+    );
+  }
+
+  void lauchMap() async {
+    final availableMaps = await MapLauncher.installedMaps;
+    await availableMaps.first.showMarker(
+      coords: Coords(AppConstants.finaleVenueLat, AppConstants.finaleVenueLong),
+      title:
+          "Arab Academy for Science, Technology & Maritime Transport (AASTMT), Abou Kir, Alexandria - Egypt",
     );
   }
 }
