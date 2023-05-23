@@ -10,6 +10,7 @@ import 'package:yesist_ios_app/utils/url_utils.dart';
 
 part 'widgets/_resources_tile.dart';
 part 'widgets/_home_card.dart';
+part 'data/_data.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -123,7 +124,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              // Space.y1!,
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
@@ -165,14 +165,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: MediaQuery.of(context).size.height * 0.04,
               ),
               Text("Why you should join \nYESIST12?", style: AppText.h2b),
-              const _ResoucesTile(
-                  title: 'Hello', description: "hsajhfjhjkaklfsdjhfs"),
-              const _ResoucesTile(
-                  title: 'Hello', description: "hsajhfjhjkaklfsdjhfs"),
-              const _ResoucesTile(
-                  title: 'Hello', description: "hsajhfjhjkaklfsdjhfs"),
-              const _ResoucesTile(
-                  title: 'Hello', description: "hsajhfjhjkaklfsdjhfs")
+              ..._Data.d
+                  .map(
+                    (e) => _ResoucesTile(
+                        title: e['title']!, description: e['description']!),
+                  )
+                  .toList(),
             ],
           ),
         ),
