@@ -11,7 +11,9 @@ class FaqAnswersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("FAQs"),
+      ),
       body: Center(
         child: ListView.separated(
           itemCount: faqTrack['questions'].length,
