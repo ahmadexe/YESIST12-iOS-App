@@ -31,6 +31,7 @@ class Data {
     {
       'img': "assets/tracks/tracks3.jpg",
       'name': 'Junior Einstein',
+      'hasUrl' : true,
       'questions': [
         'What is the age limit for the JE track?',
         'How can one participate in JE Track?',
@@ -44,8 +45,8 @@ class Data {
         'There are 2 ways, either by Pilot Entry Mode or by Direct Entry Mode.',
         'Any school, institute, organization,o or IEEE OU can act as a pilot and conduct the preliminary round for the JE track.',
         'Participants can register with any of the pilot insititutions and attend the preliminary round.',
-        'Students facing difficulties participating in the pilots round can directly participate in the pilots round can directly participate in this entry. But there will be internal selections among the no. of abstracts received. \nDirect Entry link: ',
-        'Some link',
+        'Students facing difficulties participating in the pilots round can directly participate in the pilots round can directly participate in this entry. But there will be internal selections among the no. of abstracts received. \nDirect Entry link: _link_',
+        '_link_',
       ],
     },
     {
@@ -79,7 +80,7 @@ class Data {
         "Yes, one team is allowed to submit multiple abstracrts under the same or different topics. However, the abstract provided should look unique.",
         'Yes, the competition is open for international applicants. Do check the rules and regulations section in the website to understand the rules of YESIST\'12.',
         'Decide your problem statement in accordance with the theme of the competition. Analyze similar products and come up with a MVP. Also, think of ideas that will be really useful to the stakeholders in context. Choose the feature you are planning to implement wisely. Think of ways you can shape your raw ideas for the benefit of yourself and the society. Presentaiton skills matter as well.',
-        'Please email at ...'
+        'Please email at _link_'
       ],
     },
   ];

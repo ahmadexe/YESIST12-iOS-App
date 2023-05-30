@@ -7,7 +7,7 @@ part 'widgets/_qna_tile.dart';
 class FaqAnswersScreen extends StatelessWidget {
   final Map<String, dynamic> faqTrack;
   const FaqAnswersScreen({required this.faqTrack, super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
