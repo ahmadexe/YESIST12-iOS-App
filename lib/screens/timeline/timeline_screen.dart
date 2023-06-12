@@ -97,7 +97,7 @@ class _TimelineScreenState extends State<TimelineScreen> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      DateFormat('jm').format(_selectedDate),
+                      DateFormat('jm').format(DateTime.now()),
                       style: AppText.b1!.copyWith(color: Colors.white),
                     ),
                     Text(
@@ -105,7 +105,7 @@ class _TimelineScreenState extends State<TimelineScreen> {
                       style: AppText.b2!.copyWith(color: Colors.green[300]),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ],
