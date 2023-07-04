@@ -17,7 +17,7 @@ class Data {
     },
     {
       'icon': Icons.handshake_outlined,
-      'title': 'Sponsers',
+      'title': 'Sponsors',
     },
     {
       'icon': CupertinoIcons.location_fill,

@@ -8,6 +8,7 @@ import 'package:yesist_ios_app/screens/about/about_screen.dart';
 import 'package:yesist_ios_app/screens/faqs/faqs_screen.dart';
 import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/screens/places/places_screen.dart';
+import 'package:yesist_ios_app/screens/sponsors/sponsors_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
 
 import 'data/data.dart';
@@ -116,6 +117,14 @@ class MoreInfoScreen extends StatelessWidget {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (_) => const MobileLayout(),
+                            ),
+                          );
+                          break;
+
+                        case 'Sponsors':
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => const SponsorsScreen(),
                             ),
                           );
                           break;
