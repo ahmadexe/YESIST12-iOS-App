@@ -41,19 +41,27 @@ class FinaleScreen extends StatelessWidget {
                 title: "VIEW MAP",
                 isMap: true,
               ),
+              Space.y2!,
+              Text(
+                "From Borg El Arab Airport",
+                style: AppText.h2b,
+              ),
               Space.y!,
               _ResoucesTile(
-                title: "By Taxi",
+                title: "Take an Airport taxi",
                 descWidgets: [
                   ListTile(
                     tileColor: Colors.grey[200],
-                    onTap: () {},
+                    onTap: () {
+                      UrlUtils.launchTheUrl(
+                          "https://www.alexandria-airport.com/taxi-service/");
+                    },
                     dense: true,
                     contentPadding: const EdgeInsets.all(8),
                     visualDensity: VisualDensity.compact,
                     minLeadingWidth: 10,
                     title: Text(
-                      "Catch a taxi from nearest taxi stand across from the airport. Most Taxis are medium-sized passenger vehicles but are charged the same as general taxi. Taxi fares from the airport to the hotel are fixed, so confirm the fare prior to departure.",
+                      "Visit https://www.alexandria-airport.com/taxi-service/ and book a taxi.",
                       style: AppText.b2,
                     ),
                   ),
@@ -61,53 +69,77 @@ class FinaleScreen extends StatelessWidget {
               ),
               Space.y!,
               _ResoucesTile(
-                title: "By Public Transport",
+                title: "Take an Airport taxi",
                 descWidgets: [
                   ListTile(
                     tileColor: Colors.grey[200],
-                    onTap: () {},
+                    onTap: () {
+                      UrlUtils.launchTheUrl(
+                          "https://cairoshuttlebus.com/?gclid=EAIaIQobChMI7v7WmITS_AIVAI5oCR00RgFCEAAYAyAAEgIdOPD_BwE");
+                    },
                     dense: true,
                     contentPadding: const EdgeInsets.all(8),
                     visualDensity: VisualDensity.compact,
                     minLeadingWidth: 10,
                     title: Text(
-                      "From Airport",
-                      style: AppText.b2!.w(6),
-                    ),
-                    subtitle: Text(
-                      "Get on a bus and get off at thr 'Sri Venkateswara College of Engineering.'",
+                      "Shuttle Bus - Click here",
                       style: AppText.b2,
                     ),
                   ),
+                ],
+              ),
+              Space.y!,
+              _ResoucesTile(
+                title: "Take Uber Taxi",
+                descWidgets: [
                   ListTile(
                     tileColor: Colors.grey[200],
-                    onTap: () {},
                     dense: true,
                     contentPadding: const EdgeInsets.all(8),
                     visualDensity: VisualDensity.compact,
                     minLeadingWidth: 10,
                     title: Text(
-                      "From Majestic Bus Terminal",
-                      style: AppText.b2!.w(6),
-                    ),
-                    subtitle: Text(
-                      "Get on at the Majestic Bus Terminal (Bus: 282B and 282F) get off at the Sri Venkateswara College of Engineering.",
+                      "Uber Taxi - Taxi fare from Borg Elarab Airport to Abu Kir can cost approximately (Uber Taxi ~\$15 USD).",
                       style: AppText.b2,
                     ),
                   ),
+                ],
+              ),
+              Space.y2!,
+              Text(
+                "From Cairo Internation Airport",
+                style: AppText.h2b,
+              ),
+              _ResoucesTile(
+                title: "Take a bus",
+                descWidgets: [
                   ListTile(
                     tileColor: Colors.grey[200],
-                    onTap: () {},
                     dense: true,
                     contentPadding: const EdgeInsets.all(8),
                     visualDensity: VisualDensity.compact,
                     minLeadingWidth: 10,
                     title: Text(
-                      "From East Railway Station",
-                      style: AppText.b2!.w(6),
+                      '''1- Terminal Shuttle bus (free) to Superjet Bus
+2- Superjet bus to Smouha Alexandria (~5\$)
+3- Uber from Smouha to AASTMT (~3\$)''',
+                      style: AppText.b2,
                     ),
-                    subtitle: Text(
-                      "Get on at the East Railway Station (Bus: 292D, 295D and 296D) get off at Sri Venkateswara College of Engineering.",
+                  ),
+                ],
+              ),
+              Space.y!,
+              _ResoucesTile(
+                title: "Take Uber Taxi",
+                descWidgets: [
+                  ListTile(
+                    tileColor: Colors.grey[200],
+                    dense: true,
+                    contentPadding: const EdgeInsets.all(8),
+                    visualDensity: VisualDensity.compact,
+                    minLeadingWidth: 10,
+                    title: Text(
+                      "Uber Taxi to AASTMT (~50\$)",
                       style: AppText.b2,
                     ),
                   ),
