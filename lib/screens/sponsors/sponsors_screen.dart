@@ -12,9 +12,9 @@ class SponsorsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Sponsors'),
       ),
-      body: Wrap(
+      body: const Wrap(
         alignment: WrapAlignment.center,
-        children: const [
+        children: [
           _SponsorLogo(),
           _SponsorLogo(),
           _SponsorLogo(),
