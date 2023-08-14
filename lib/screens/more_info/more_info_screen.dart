@@ -8,8 +8,8 @@ import 'package:yesist_ios_app/screens/about/about_screen.dart';
 import 'package:yesist_ios_app/screens/faqs/faqs_screen.dart';
 import 'package:yesist_ios_app/screens/notifications/notifications_screen.dart';
 import 'package:yesist_ios_app/screens/places/places_screen.dart';
-import 'package:yesist_ios_app/screens/sponsors/sponsors_screen.dart';
 import 'package:yesist_ios_app/static/constants.dart';
+import 'package:yesist_ios_app/utils/url_utils.dart';
 
 import 'data/data.dart';
 
@@ -122,12 +122,13 @@ class MoreInfoScreen extends StatelessWidget {
                           break;
 
                         case 'Sponsors':
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => const SponsorsScreen(),
-                            ),
-                          );
+                          UrlUtils.launchTheUrl(
+                              'https://ieeeyesist12.org/sponsors/');
                           break;
+
+                        case 'Team':
+                          UrlUtils.launchTheUrl(
+                              'https://ieeeyesist12.org/steering-committee-2023/');
                       }
                     },
                   );

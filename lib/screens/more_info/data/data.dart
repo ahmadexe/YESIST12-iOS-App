@@ -23,20 +23,24 @@ class Data {
       'icon': CupertinoIcons.location_fill,
       'title': 'Finale',
     },
+    // {
+    //   'icon': Icons.castle_outlined,
+    //   'title': 'Places to visit',
+    // },
     {
-      'icon': Icons.castle_outlined,
-      'title': 'Places to visit',
+      'icon': Icons.people,
+      'title': 'Team',
     },
     {
       'icon': Icons.sms_failed_outlined,
       'title': 'About Us',
     },
-    {
-      'icon': Icons.notifications,
-      'title': 'Notifcation History',
-    }
+    // {
+    // 'icon': Icons.notifications,
+    // 'title': 'Notifcation History',
+    // }
   ];
-  
+
   static List<Map<String, dynamic>> secondaryData = [
     {
       'icon': Icons.question_answer_outlined,
